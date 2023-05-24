@@ -1,0 +1,70 @@
+@use "variables" as vars;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    font-family: "Inter", sans-serif;
+    line-height: calc(1em + 0.5rem);
+    color: vars.$black;
+    outline-offset: 0.35rem;
+    outline-width: 0.125rem;
+    outline-color: vars.$middle-dark;
+}
+
+html {
+    scroll-behavior: smooth;
+    scrollbar-color: vars.$light-dark vars.$primary-color;
+    scrollbar-width: thin;
+}
+
+body,
+html {
+    min-width: fit-content;
+}
+
+body::-webkit-scrollbar {
+    width: 0.75rem;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, vars.$middle-dark, vars.$light-dark);
+    border: 1px solid vars.$primary-color;
+    border-radius: 2rem;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: vars.$primary-color;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+
+    &:focus-visible {
+        outline-style: dashed;
+    }
+}
+
+p {
+    line-height: calc(1em + 0.75rem);
+}
+
+li {
+    list-style-type: none;
+}
+
+button {
+    border: none;
+    display: block;
+
+    &:focus-visible {
+        outline-style: dashed;
+    }
+}
+
+::before,
+::after {
+    box-sizing: border-box;
+}

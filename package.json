@@ -1,0 +1,38 @@
+{
+    "name": "portfolio",
+    "version": "1.0.0",
+    "private": true,
+    "files": [
+        "public",
+        "src",
+        "jsconfig.json",
+        "next.config.js",
+        "postcss.config.js"
+    ],
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.4.14",
+        "eslint": "8.40.0",
+        "eslint-config-next": "13.4.2",
+        "eslint-config-prettier": "^8.8.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "eslint-plugin-react": "^7.32.2",
+        "postcss": "^8.4.23",
+        "prettier": "^2.8.8",
+        "prop-types": "^15.8.1",
+        "sass": "^1.62.1"
+    },
+    "dependencies": {
+        "contentful": "^10.2.1",
+        "framer-motion": "^10.12.12",
+        "next": "13.4.2",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "react-icons": "^4.8.0"
+    }
+}

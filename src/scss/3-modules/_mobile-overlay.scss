@@ -1,0 +1,24 @@
+@use "../1-bases/mixins" as mixins;
+
+.overlay {
+    display: none;
+    position: fixed;
+    visibility: hidden;
+    opacity: 0%;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(0.125rem);
+    transition: opacity 0.5s, visibility 0.5s;
+
+    &--open {
+        opacity: 100%;
+        visibility: visible;
+    }
+
+    @include mixins.media-920 {
+        display: block;
+    }
+}

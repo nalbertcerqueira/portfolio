@@ -1,0 +1,35 @@
+@use "../1-bases/mixins" as mixins;
+@use "../1-bases/variables" as vars;
+
+.subtitle {
+    @include mixins.flex($gap: 1rem);
+    position: relative;
+    width: fit-content;
+    margin-bottom: 0.75rem;
+
+    @include mixins.media-640 {
+        margin: 0 auto 1.5rem;
+    }
+
+    &__marker {
+        display: block;
+        border-radius: 2rem;
+        background-color: vars.$white;
+        box-shadow: 0 0 0.25rem vars.$white;
+        height: 0.125rem;
+        width: 4rem;
+        transition: vars.$transition-time;
+
+        @include mixins.media-640 {
+            @include mixins.absolute-position($top: calc(100% + 0.25rem));
+            width: 100%;
+        }
+    }
+
+    &__content {
+        display: block;
+        color: vars.$white;
+        font-weight: 500;
+        font-size: 1rem;
+    }
+}

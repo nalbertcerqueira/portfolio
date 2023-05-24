@@ -1,0 +1,50 @@
+.marker {
+    &--html {
+        background-color: #e34f26;
+        box-shadow: 0 0 0.25rem #e34f26;
+    }
+    &--css {
+        background-color: #1b73ba;
+        box-shadow: 0 0 0.25rem #1b73ba;
+    }
+    &--js {
+        background-color: #f0db4f;
+        box-shadow: 0 0 0.25rem #f0db4f;
+    }
+    &--sass {
+        background-color: #cb6297;
+        box-shadow: 0 0 0.25rem #cb6297;
+    }
+    &--react {
+        background-color: #00d8ff;
+        box-shadow: 0 0 0.25rem #00d8ff;
+    }
+    &--node {
+        background-color: #8cc84b;
+        box-shadow: 0 0 0.25rem #8cc84b;
+    }
+    &--express {
+        background-color: #c9c9c9;
+        box-shadow: 0 0 0.25rem #c9c9c9;
+    }
+    &--tailwind {
+        background-color: #16a5be;
+        box-shadow: 0 0 0.25rem #16a5be;
+    }
+    &--next {
+        background-color: #ffffff;
+        box-shadow: 0 0 0.25rem #ffffff;
+    }
+    &--git {
+        background-color: #de3636;
+        box-shadow: 0 0 0.25rem #de3636;
+    }
+    &--github {
+        background-color: #a8594e;
+        box-shadow: 0 0 0.25rem #a8594e;
+    }
+    &--webpack {
+        background-color: #8ed6fb;
+        box-shadow: 0 0 0.25rem #8ed6fb;
+    }
+}

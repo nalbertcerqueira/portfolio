@@ -1,0 +1,240 @@
+@use "../1-bases/variables" as vars;
+@use "../1-bases/mixins" as mixins;
+@use "sass:color";
+
+//Reescrevendo os estilos da página para o modo dark.
+html.dark-mode {
+    scrollbar-color: vars.$light-grey vars.$default-dark;
+
+    * {
+        outline-color: vars.$primary-color;
+    }
+
+    body::-webkit-scrollbar-thumb {
+        background: linear-gradient(to bottom, vars.$light-dark, vars.$light-grey);
+        border: 1px solid vars.$default-dark;
+    }
+
+    body::-webkit-scrollbar-track {
+        background-color: vars.$default-dark;
+    }
+
+    //Header da página.
+    .header {
+        background-color: rgba(vars.$default-dark, 0.8);
+
+        &--shaded {
+            box-shadow: 0 1px 0.5rem rgba(vars.$black, 0.75);
+        }
+
+        &__home {
+            box-shadow: 0 0 0 0.125rem vars.$white;
+        }
+
+        &__navbar {
+            @include mixins.media-920 {
+                background-color: vars.$primary-color;
+            }
+        }
+
+        &__nav-list {
+            @include mixins.media-920 {
+                background-color: vars.$middle-dark;
+            }
+        }
+
+        &__btn-close:hover,
+        &__btn-close:focus-visible {
+            box-shadow: 0 0 0 1px vars.$middle-dark;
+            outline-color: vars.$middle-dark;
+        }
+
+        &__close-icon {
+            fill: vars.$middle-dark;
+        }
+    }
+
+    //Sessão hero.
+    .hero {
+        background-color: vars.$default-dark;
+
+        &__title {
+            &--main {
+                color: vars.$primary-color;
+            }
+            &--sub {
+                color: rgba(vars.$primary-color, 0.75);
+            }
+        }
+
+        &__avatar-container::before {
+            background-color: vars.$primary-color;
+        }
+
+        &__avatar-img {
+            background-color: vars.$primary-color;
+            border-color: vars.$primary-color;
+        }
+    }
+
+    //Sessão de projetos.
+    .projects {
+        background-color: vars.$default-dark;
+
+        &__title {
+            background-color: vars.$default-dark;
+            color: vars.$primary-color;
+        }
+
+        &__title-line {
+            background-color: rgba(vars.$white, 0.6);
+        }
+    }
+
+    //Footer da página.
+    .footer {
+        background-color: vars.$default-dark;
+
+        &__social-icon {
+            fill: vars.$primary-color;
+        }
+
+        &__mailto-link {
+            color: vars.$primary-color;
+            font-weight: 300;
+        }
+
+        &__copyright,
+        &__author {
+            color: vars.$primary-color;
+            font-weight: 300;
+        }
+
+        &__link-bottom {
+            color: vars.$primary-color;
+
+            &::after {
+                background-color: vars.$primary-color;
+            }
+        }
+    }
+
+    //Barra de navegação.
+    .navbar {
+        &__link {
+            color: vars.$primary-color;
+            font-weight: 400;
+
+            &::after {
+                background: linear-gradient(to right, transparent, vars.$primary-color);
+            }
+        }
+    }
+
+    //Botões.
+    .btn {
+        &--hamburger {
+            &:focus-visible,
+            &:hover {
+                box-shadow: 0 0 0 1px vars.$primary-color;
+            }
+
+            &__bar {
+                background-color: vars.$primary-color;
+            }
+        }
+
+        &--download,
+        &--show-more {
+            outline-color: transparent;
+            &__content {
+                background-color: vars.$default-dark;
+                border-color: vars.$primary-color;
+            }
+
+            &::before {
+                background-color: vars.$primary-color;
+            }
+
+            &:hover,
+            &:focus-visible {
+                .btn--download,
+                .btn--show-more {
+                    &__content {
+                        background-color: vars.$default-dark;
+                        border-color: vars.$primary-color;
+                        color: vars.$primary-color;
+                    }
+                    &__icon {
+                        fill: vars.$primary-color;
+                    }
+                }
+            }
+        }
+
+        &--scrolltop {
+            background-color: vars.$primary-color;
+            border-color: vars.$default-dark;
+            box-shadow: 0 0 0 1px vars.$primary-color;
+
+            &__icon {
+                fill: vars.$default-dark;
+            }
+        }
+    }
+
+    //Links laterais.
+    .side-links {
+        &__icon {
+            fill: vars.$light-grey;
+
+            &:hover {
+                fill: vars.$primary-color;
+            }
+        }
+
+        &__bar {
+            background-color: vars.$light-grey;
+        }
+    }
+
+    //Card de projeto.
+    .project {
+        &__skew {
+            box-shadow: 0.5rem 0.5rem 0 0.125rem darken(vars.$primary-color, 10%),
+                0 0 0 0.125rem darken(vars.$primary-color, 10%);
+        }
+
+        &__link-banner {
+            border-color: vars.$primary-color;
+        }
+
+        &__link-title {
+            color: vars.$primary-color;
+
+            &:hover,
+            &:focus-visible {
+                text-decoration-color: vars.$primary-color;
+            }
+        }
+
+        &__description {
+            color: vars.$text-white;
+        }
+
+        &__tech-item {
+            font-weight: 300;
+            color: rgba(vars.$text-white, 0.85);
+            border-color: rgba(vars.$text-white, 0.85);
+        }
+
+        &__ext-link:hover,
+        &__ext-link:focus-visible {
+            box-shadow: 0 0 0 1px vars.$primary-color;
+        }
+
+        &__ext-icon {
+            fill: vars.$primary-color;
+        }
+    }
+}

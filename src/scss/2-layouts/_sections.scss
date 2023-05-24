@@ -1,0 +1,457 @@
+@use "../1-bases/variables" as vars;
+@use "../1-bases/mixins" as mixins;
+@use "../1-bases/placeholders";
+
+.hero {
+    $avatar-border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    @extend %outer-padding;
+    background-color: vars.$primary-color;
+    transition: background-color vars.$transition-time;
+    height: 100vh;
+
+    @include mixins.media-920 {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    &__inner-container {
+        @extend %inner-width;
+        @include mixins.flex;
+        position: relative;
+        height: 100%;
+
+        @include mixins.media-920 {
+            padding-bottom: 4rem;
+            padding-top: 5.5rem;
+        }
+
+        @include mixins.media-640 {
+            padding-bottom: 3rem;
+        }
+    }
+
+    &__content-wrapper {
+        @include mixins.flex(
+            $justify: space-between,
+            $direction: row-reverse,
+            $gap: 2rem
+        );
+        width: 100%;
+
+        @include mixins.media-920 {
+            flex-direction: column;
+        }
+    }
+
+    &__left-content {
+        @include mixins.flex($direction: column, $gap: 2rem, $items: flex-start);
+    }
+
+    &__title {
+        display: inline-block;
+        font-weight: 800;
+        font-size: 3.5rem;
+        transition: color vars.$transition-time;
+
+        @include mixins.media-1040 {
+            font-size: 3rem;
+        }
+
+        @include mixins.media-920 {
+            text-align: center;
+        }
+
+        @include mixins.media-640 {
+            font-size: 2.5rem;
+        }
+
+        &--main {
+            color: vars.$middle-dark;
+        }
+
+        &--sub {
+            color: vars.$light-dark;
+            font-size: 2.75rem;
+
+            @include mixins.media-1040 {
+                font-size: 2.25rem;
+            }
+
+            @include mixins.media-640 {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    &__avatar-container {
+        position: relative;
+        max-height: 24rem;
+        max-width: 24rem;
+        width: 28vw;
+        height: 28vw;
+        border-radius: $avatar-border-radius;
+
+        &::before {
+            @include mixins.absolute-position;
+            @extend %full-height-width;
+            content: "";
+            border-radius: $avatar-border-radius;
+            background-color: vars.$middle-dark;
+            transition: background-color vars.$transition-time;
+        }
+
+        &:hover {
+            .hero__avatar-img {
+                transform: translate(-0.35rem, -0.35rem);
+            }
+        }
+
+        @include mixins.media-1040 {
+            width: 19rem;
+            height: 19rem;
+        }
+
+        @include mixins.media-640 {
+            width: calc(12rem + 15vw);
+            height: calc(12rem + 15vw);
+        }
+    }
+
+    &__avatar-img {
+        @extend %full-height-width;
+        position: relative;
+        object-fit: cover;
+        object-position: 0 20%;
+        background-color: vars.$middle-dark;
+        border: 0.125rem solid vars.$middle-dark;
+        border-radius: $avatar-border-radius;
+        transition: transform vars.$transition-time, border-color vars.$transition-time,
+            background-color vars.$transition-time;
+    }
+
+    &__btn {
+        @include mixins.media-920 {
+            margin: 0 auto;
+        }
+    }
+}
+
+.about {
+    @extend %outer-padding;
+    overflow: hidden;
+    background-color: vars.$middle-dark;
+
+    &__inner-container {
+        @extend %inner-width;
+        padding-bottom: 5rem;
+        padding-top: 4rem;
+
+        @include mixins.media-640 {
+            padding-block: 3rem;
+        }
+    }
+
+    &__title-box {
+        @include mixins.section-title-box(
+            $parent: ".about",
+            $line-bg-color: rgba(vars.$white, 0.6)
+        );
+    }
+
+    &__title {
+        @extend %section-title;
+        color: vars.$primary-color;
+        background-color: vars.$middle-dark;
+    }
+
+    &__content-wrapper {
+        @include mixins.flex($gap: 4rem, $justify: space-between, $items: flex-start);
+
+        @include mixins.media-1040 {
+            position: relative;
+            flex-direction: column;
+        }
+    }
+
+    &__avatar-container {
+        position: relative;
+        flex-shrink: 0;
+        align-self: stretch;
+        width: 28%;
+
+        @include mixins.media-1040 {
+            display: none;
+        }
+
+        &::before {
+            @extend %full-height-width;
+            @include mixins.absolute-position($top: 1.125rem, $left: 1rem);
+            content: "";
+            border: 0.125rem solid rgba(vars.$white, 0.6);
+            border-radius: 1rem;
+            transition: 0.35s;
+
+            @include mixins.media-1040 {
+                display: none;
+            }
+        }
+
+        &:hover::before {
+            transform: translate(0.3rem, 0.3rem);
+            border-color: vars.$white;
+        }
+
+        &:hover .about__avatar-img {
+            transform: translate(-0.3rem, -0.3rem);
+            border-color: vars.$white;
+        }
+    }
+
+    &__avatar-img {
+        @extend %full-height-width;
+        position: relative;
+        border-radius: 1rem;
+        object-fit: cover;
+        object-position: top;
+        border: 0.125rem solid rgba(vars.$white, 0.6);
+        transition: vars.$transition-time;
+    }
+
+    &__right-content {
+        @include mixins.flex($direction: column, $items: flex-start, $gap: 2rem);
+    }
+
+    &__content-division {
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        background-color: vars.$default-dark;
+        box-shadow: 0.25rem 0.25rem 0.5rem #00000091;
+        width: 100%;
+    }
+
+    &__text {
+        color: vars.$text-white;
+        font-weight: 300;
+    }
+
+    &__marker {
+        background-color: vars.$red;
+        box-shadow: 0 0 0.25rem vars.$red;
+    }
+
+    &__social-wrapper {
+        @include mixins.flex($gap: 2rem, $justify: flex-start, $wrap: wrap);
+        margin-top: 1.25rem;
+
+        @include mixins.media-640 {
+            justify-content: center;
+            margin-top: 1.75rem;
+        }
+    }
+
+    &__social-link {
+        @include mixins.flex;
+        position: relative;
+        width: 3.75rem;
+        height: 3.75rem;
+        border-radius: 0.25rem;
+        background-color: vars.$default-dark;
+        box-shadow: 0.25rem 0.25rem 0.5rem #00000091,
+            0 0 0 0.125rem inset rgba(vars.$light-dark, 0.25);
+        transition: transform vars.$transition-time, box-shadow vars.$transition-time;
+
+        &:focus-visible {
+            outline-color: vars.$white;
+        }
+
+        &:hover,
+        &:focus-visible {
+            transform: translate(-0.25rem, -0.25rem);
+            box-shadow: 0.5rem 0.5rem 0.75rem #00000091,
+                0 0 0 0.125rem inset rgba(vars.$light-dark, 0.25);
+
+            .about__social-icon {
+                fill: vars.$red;
+            }
+        }
+    }
+
+    &__social-icon {
+        fill: vars.$primary-color;
+        height: 42%;
+        width: 42%;
+        transition: vars.$transition-time;
+    }
+}
+
+.projects {
+    @extend %outer-padding;
+    overflow: hidden;
+    background-color: vars.$primary-color;
+    transition: background-color vars.$transition-time;
+
+    &__inner-container {
+        @extend %inner-width;
+        padding-block: 4rem;
+
+        @include mixins.media-640 {
+            padding-block: 3rem;
+        }
+    }
+
+    &__title-box {
+        @include mixins.section-title-box(
+            $parent: ".projects",
+            $line-bg-color: rgba(vars.$middle-dark, 0.6)
+        );
+    }
+
+    &__title {
+        @extend %section-title;
+        color: vars.$middle-dark;
+        background-color: vars.$primary-color;
+    }
+
+    &__cards-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+        margin-bottom: 4rem;
+
+        @include mixins.media-920 {
+            grid-template-columns: 1fr;
+            margin-bottom: 3rem;
+        }
+    }
+
+    &__btn {
+        margin: 0 auto;
+    }
+}
+
+.skills {
+    @extend %outer-padding;
+    overflow: hidden;
+    background-color: vars.$middle-dark;
+
+    &__inner-container {
+        @extend %inner-width;
+        padding-block: 4rem;
+
+        @include mixins.media-640 {
+            padding-block: 3rem;
+        }
+    }
+
+    &__title-box {
+        @include mixins.section-title-box(
+            $parent: ".skills",
+            $line-bg-color: rgba(vars.$white, 0.6)
+        );
+    }
+
+    &__title {
+        @extend %section-title;
+        color: vars.$primary-color;
+        background-color: vars.$middle-dark;
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: 42.5% auto;
+        gap: 2rem;
+
+        @include mixins.media-920 {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+    }
+
+    &__description-box {
+        @include mixins.flex($items: flex-start);
+        overflow: hidden;
+        background-color: vars.$default-dark;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        box-shadow: 0.25rem 0.25rem 0.5rem #00000091;
+        grid-column: 1/2;
+        grid-row: 1;
+
+        @include mixins.media-920 {
+            grid-row: 2;
+            grid-column: 1 / 3;
+        }
+    }
+
+    &__desc-wrapper {
+        opacity: 0%;
+        animation: show 1s forwards;
+    }
+
+    &__tech-desc {
+        color: vars.$text-white;
+    }
+
+    &__draft-container {
+        transform: translateY(100%);
+        opacity: 0%;
+        align-self: center;
+        animation: slide-vertical 1s forwards;
+    }
+
+    &__desc-draft {
+        text-align: center;
+        color: vars.$text-white;
+
+        @include mixins.media-920 {
+            display: none;
+        }
+
+        &--mobile {
+            display: none;
+
+            @include mixins.media-920 {
+                display: block;
+            }
+        }
+    }
+
+    &__hover-icon {
+        display: block;
+        margin: 1.5rem auto 0;
+        fill: vars.$primary-color;
+        height: 2.5rem;
+        width: 2.5rem;
+        animation: bounce 1.5s alternate infinite ease-in-out;
+        transform: translateY(0.5rem);
+        opacity: 0.5;
+    }
+
+    &__stack-list {
+        grid-column: 2/3;
+
+        @include mixins.media-920 {
+            grid-column: 1 / 3;
+        }
+    }
+}
+
+@keyframes slide-vertical {
+    100% {
+        transform: translateY(0);
+        opacity: 100%;
+    }
+}
+
+@keyframes show {
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes bounce {
+    100% {
+        transform: translateY(-0.5rem);
+        opacity: 1;
+    }
+}

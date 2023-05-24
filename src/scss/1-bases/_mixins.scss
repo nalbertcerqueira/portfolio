@@ -1,0 +1,59 @@
+@use "./variables" as vars;
+
+@mixin media-1040 {
+    @media only screen and (max-width: 1040px) {
+        @content;
+    }
+}
+@mixin media-920 {
+    @media only screen and (max-width: 920px) {
+        @content;
+    }
+}
+@mixin media-640 {
+    @media only screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin flex(
+    $justify: center,
+    $items: center,
+    $gap: 0rem,
+    $direction: row,
+    $wrap: nowrap
+) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $items;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    gap: $gap;
+}
+
+@mixin absolute-position($left: 0, $top: 0) {
+    position: absolute;
+    left: $left;
+    top: $top;
+}
+
+@mixin section-title-box($parent: "", $line-bg-color: transparent) {
+    @include flex($gap: 1rem, $justify: flex-start);
+    position: relative;
+    margin-bottom: 3rem;
+
+    @include media-640 {
+        margin-bottom: 2rem;
+    }
+
+    #{$parent}__title-line {
+        height: 1px;
+        width: 100%;
+        background-color: $line-bg-color;
+        transition: background-color vars.$transition-time;
+
+        @include media-640 {
+            display: none;
+        }
+    }
+}

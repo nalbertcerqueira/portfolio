@@ -1,0 +1,207 @@
+@use "../1-bases/variables" as vars;
+@use "../1-bases/mixins" as mixins;
+@use "../1-bases/placeholders";
+
+%default-theme-icon {
+    opacity: 0%;
+    width: 1.25rem;
+    height: 1.25rem;
+    animation: show-theme-icon 0.35s forwards;
+}
+
+@mixin expand-btn-effect(
+    $color: vars.$primary-color,
+    $bg-color: vars.$middle-dark,
+    $shadow-color: vars.$middle-dark
+) {
+    position: relative;
+    outline-color: transparent;
+
+    &__content {
+        display: block;
+        position: relative;
+        background-color: $bg-color;
+        color: $color;
+        border-radius: 0.25rem;
+        border: 1px solid transparent;
+        transition: vars.$transition-time;
+        @content;
+    }
+
+    &::before {
+        content: "";
+        @extend %full-height-width;
+        @include mixins.absolute-position;
+        background-color: $bg-color;
+        border-radius: 0.25rem;
+        transition: vars.$transition-time;
+    }
+
+    &:hover &__content,
+    &:focus-visible &__content {
+        background-color: $color;
+        color: $bg-color;
+        border-color: $bg-color;
+        transform: translate(-0.3rem, -0.3rem);
+    }
+
+    &:active &__content {
+        transform: translate(0);
+    }
+}
+
+.btn {
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    background-color: transparent;
+    transition: fill vars.$transition-time, box-shadow vars.$transition-time,
+        background-color vars.$transition-time, color vars.$transition-time,
+        stroke vars.$transition-time, border-color vars.$transition-time;
+
+    &--download {
+        @include expand-btn-effect {
+            padding: 0.675rem 0.95rem;
+            font-weight: 500;
+        }
+    }
+
+    &--theme {
+        @include mixins.flex;
+        padding: 0.45rem;
+        border-radius: 50%;
+        flex-shrink: 0;
+
+        &--light {
+            background-color: vars.$default-dark;
+        }
+
+        &--dark {
+            background-color: vars.$primary-color;
+        }
+
+        &__light-icon {
+            @extend %default-theme-icon;
+            fill: vars.$primary-color;
+            stroke: vars.$primary-color;
+        }
+
+        &__dark-icon {
+            @extend %default-theme-icon;
+            fill: vars.$default-dark;
+            stroke: vars.$default-dark;
+        }
+    }
+
+    &--show-more {
+        @include expand-btn-effect {
+            @include mixins.flex($gap: 0.25rem);
+            padding: 0.675rem 0.5rem 0.676rem 0.95rem;
+            font-weight: 500;
+        }
+
+        &__icon {
+            height: 1.5rem;
+            width: 1.5rem;
+            fill: vars.$primary-color;
+            transition: vars.$transition-time;
+        }
+
+        &:hover &__icon,
+        &:focus-visible &__icon {
+            fill: vars.$middle-dark;
+        }
+    }
+
+    &--hamburger {
+        padding: 0.5rem;
+        display: none;
+
+        @include mixins.media-920 {
+            display: block;
+        }
+
+        &:hover,
+        &:focus-visible {
+            box-shadow: 0 0 0 1px vars.$default-dark;
+
+            .btn--hamburger__bar:nth-child(2),
+            .btn--hamburger__bar:last-child {
+                width: 100%;
+            }
+        }
+
+        &__bars {
+            @include mixins.flex($gap: 0.3rem, $direction: column, $items: flex-start);
+        }
+
+        &__bar {
+            height: 0.125rem;
+            width: 2rem;
+            flex-shrink: 0;
+            background-color: vars.$default-dark;
+            border-radius: 1rem;
+            transition: vars.$transition-time;
+
+            &:nth-child(2) {
+                width: 75%;
+            }
+
+            &:last-child {
+                width: 50%;
+            }
+        }
+
+        &--dark {
+            &:hover,
+            &:focus-visible {
+                box-shadow: 0 0 0 1px vars.$primary-color;
+            }
+
+            &:focus-visible {
+                outline-color: vars.$primary-color;
+            }
+        }
+    }
+
+    &--scrolltop {
+        @include mixins.flex;
+        position: fixed;
+        right: 1.5rem;
+        bottom: 1.5rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        border: 1px solid vars.$primary-color;
+        background: vars.$default-dark;
+        border-radius: 50%;
+        transform: translateY(calc(100% + 2.5rem));
+        opacity: 75%;
+        transition: background-color vars.$transition-time,
+            border-color vars.$transition-time, box-shadow vars.$transition-time,
+            opacity vars.$transition-time, transform 0.5s;
+
+        &:hover {
+            opacity: 100%;
+        }
+
+        &--show {
+            transform: translateY(0);
+        }
+
+        &__icon {
+            fill: vars.$primary-color;
+            height: 1.5rem;
+            width: 1.5rem;
+            transition: fill vars.$transition-time;
+        }
+    }
+}
+
+@keyframes show-theme-icon {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}

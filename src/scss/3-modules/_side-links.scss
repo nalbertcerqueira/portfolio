@@ -1,0 +1,39 @@
+@use "../1-bases/mixins" as mixins;
+@use "../1-bases/variables" as vars;
+
+.side-links {
+    @include mixins.flex($direction: column-reverse, $gap: 1.25rem);
+    @include mixins.absolute-position($left: 0, $top: 100%);
+    transform: translateY(-100%);
+
+    @include mixins.media-920 {
+        display: none;
+    }
+
+    &__bar {
+        display: block;
+        width: 1px;
+        height: 6rem;
+        background: vars.$middle-dark;
+    }
+
+    &__list {
+        @include mixins.flex($gap: 2rem, $direction: column-reverse);
+    }
+
+    &__link {
+        display: flex;
+        transition: transform vars.$transition-time;
+
+        &:hover,
+        &:focus-visible {
+            transform: translateY(-20%) scale(1.2);
+        }
+    }
+
+    &__icon {
+        width: 1.35rem;
+        height: 1.35rem;
+        transition: fill vars.$transition-time;
+    }
+}

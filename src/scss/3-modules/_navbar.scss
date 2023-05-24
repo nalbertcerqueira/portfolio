@@ -1,0 +1,46 @@
+@use "../1-bases/mixins" as mixins;
+@use "../1-bases/variables" as vars;
+
+.navbar {
+    &__list {
+        @include mixins.flex($gap: 1.25rem);
+    }
+
+    &__list-item {
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+
+    &__link {
+        position: relative;
+        padding: 0.25rem 0.5rem;
+        color: vars.$default-dark;
+        font-weight: 500;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 95%;
+            right: 0;
+            width: 0;
+            height: 0.125rem;
+            border-radius: 2rem;
+            background: linear-gradient(to right, transparent, vars.$default-dark);
+            transition: width 0.5s;
+        }
+
+        &:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        &:focus-visible {
+            outline-style: dashed;
+
+            &::after {
+                width: 100%;
+                left: 0;
+            }
+        }
+    }
+}

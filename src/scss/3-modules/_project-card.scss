@@ -1,0 +1,120 @@
+@use "../1-bases/variables" as vars;
+@use "../1-bases/mixins" as mixins;
+
+.project {
+    display: none;
+
+    &--visible {
+        display: block;
+    }
+
+    &__skew {
+        @include mixins.flex(
+            $gap: 1.5rem,
+            $justify: flex-start,
+            $items: stretch,
+            $direction: column
+        );
+        height: 100%;
+        border-radius: 0.75rem;
+        padding: 1.5rem;
+        transition: box-shadow vars.$transition-time;
+        box-shadow: 0.5rem 0.5rem 0 0.125rem vars.$middle-dark,
+            0 0 0 0.125rem vars.$middle-dark, 0.5rem 0.5rem 1rem 0.25rem #00000038;
+    }
+
+    &__link-banner {
+        flex-shrink: 0;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        border: 1px solid rgba(vars.$middle-dark, 0.6);
+        transition: border-color vars.$transition-time;
+
+        &:hover .project__banner-img,
+        &:focus-visible .project__banner-img {
+            transform: scale(1.1);
+        }
+    }
+
+    &__banner-img {
+        width: 100%;
+        height: 100%;
+        object-position: top left;
+        object-fit: cover;
+        transform-origin: center top;
+        transition: transform vars.$transition-time;
+    }
+
+    &__content {
+        @include mixins.flex($direction: column, $gap: 0.25rem, $items: flex-start);
+        height: 100%;
+    }
+
+    &__link-title {
+        position: relative;
+        font-weight: 600;
+        color: vars.$middle-dark;
+        font-size: 1.75rem;
+        text-decoration: underline;
+        text-decoration-color: transparent;
+        transition: text-decoration-color vars.$transition-time,
+            color vars.$transition-time;
+
+        &:hover,
+        &:focus-visible {
+            text-decoration-color: vars.$middle-dark;
+        }
+
+        @include mixins.media-1040 {
+            font-size: 1.5rem;
+        }
+    }
+
+    &__description {
+        color: vars.$default-dark;
+        margin-bottom: 0.5rem;
+        transition: color vars.$transition-time;
+    }
+
+    &__tech-list {
+        @include mixins.flex($gap: 0.5rem, $justify: flex-start, $wrap: wrap);
+        margin-bottom: 0.75rem;
+    }
+
+    &__tech-item {
+        color: vars.$light-dark;
+        font-size: 0.75rem;
+        font-weight: 500;
+        padding: 0.125rem 0.5rem;
+        border-radius: 0.25rem;
+        border: 1px solid vars.$light-grey;
+        letter-spacing: 1px;
+        transition: color vars.$transition-time, border-color vars.$transition-time,
+            font-weight vars.$transition-time;
+    }
+
+    &__external-links {
+        @include mixins.flex($gap: 1rem, $justify: flex-start);
+        margin-top: auto;
+    }
+
+    &__ext-link {
+        @include mixins.flex;
+        padding: 0.5rem;
+        border-radius: 0.25rem;
+        transition: transform vars.$transition-time, box-shadow vars.$transition-time;
+
+        &:hover,
+        &:focus-visible {
+            transform: scale(1.125);
+            box-shadow: 0 0 0 1px vars.$middle-dark;
+        }
+    }
+
+    &__ext-icon {
+        height: 1.25rem;
+        width: 1.25rem;
+        fill: vars.$middle-dark;
+        transition: fill vars.$transition-time;
+    }
+}

@@ -1,0 +1,91 @@
+@use "../1-bases/variables" as vars;
+@use "../1-bases/mixins" as mixins;
+@use "../1-bases/placeholders";
+
+.footer {
+    @extend %outer-padding;
+    background-color: vars.$primary-color;
+    transition: background-color vars.$transition-time;
+
+    &__inner-container {
+        @extend %inner-width;
+        padding-top: 1.75rem;
+        padding-bottom: 1.5rem;
+    }
+
+    &__social {
+        @include mixins.flex($justify: space-between, $gap: 0.5rem);
+        margin-bottom: 0.5rem;
+
+        @include mixins.media-920 {
+            flex-direction: column;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__social-wrapper {
+        @include mixins.flex($gap: 1rem, $justify: flex-start);
+    }
+
+    &__social-link {
+        display: flex;
+        transition: transform vars.$transition-time;
+
+        &:hover,
+        &:focus-visible {
+            transform: scale(1.2) translateY(-0.25rem);
+        }
+    }
+
+    &__social-icon {
+        height: 1.35rem;
+        width: 1.35rem;
+        fill: vars.$light-dark;
+        transition: fill vars.$transition-time;
+    }
+
+    &__mailto-link {
+        text-decoration: underline;
+        color: vars.$default-dark;
+        transition: color vars.$transition-time;
+    }
+
+    &__attributions {
+        @include mixins.flex($justify: space-between, $gap: 1rem);
+
+        @include mixins.media-920 {
+            flex-direction: column;
+            text-align: center;
+            gap: 0.125rem;
+        }
+    }
+
+    &__copyright,
+    &__author {
+        color: vars.$default-dark;
+        transition: color vars.$transition-time;
+    }
+
+    &__link-bottom {
+        display: inline;
+        position: relative;
+        font-weight: 600;
+        color: vars.$default-dark;
+        transition: color vars.$transition-time;
+
+        &:hover::after,
+        &:focus-visible::after {
+            width: 100%;
+        }
+
+        &::after {
+            content: "";
+            @include mixins.absolute-position($top: 100%);
+            width: 0;
+            height: 1px;
+            background-color: vars.$middle-dark;
+            transition: vars.$transition-time;
+        }
+    }
+}
