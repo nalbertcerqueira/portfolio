@@ -14,7 +14,7 @@ Este projeto se trata do meu portfólio pessoal como **Desenvolvedor Web Front-e
 
 O portfólio foi desenvolvido principalmente com Next.js e SASS, e faz uso de um headless CMS para servir algumas informações utilizadas na página.
 
-⚡ Vai lá dá uma conferida! 🔗 https://nalbertdev.com
+⚡ Vai lá dar uma conferida! 🔗 https://nalbertdev.com
 
 ## 🎮 Iniciando o projeto
 
