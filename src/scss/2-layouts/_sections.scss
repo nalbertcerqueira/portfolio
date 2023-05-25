@@ -21,12 +21,7 @@
         height: 100%;
 
         @include mixins.media-920 {
-            padding-bottom: 4rem;
-            padding-top: 5.5rem;
-        }
-
-        @include mixins.media-640 {
-            padding-bottom: 3rem;
+            min-height: 100vh;
         }
     }
 
@@ -40,6 +35,12 @@
 
         @include mixins.media-920 {
             flex-direction: column;
+            padding-bottom: 4rem;
+            padding-top: 5.5rem;
+        }
+
+        @include mixins.media-640 {
+            padding-bottom: 3rem;
         }
     }
 
