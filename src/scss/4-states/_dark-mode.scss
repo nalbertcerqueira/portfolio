@@ -185,6 +185,12 @@ html.dark-mode {
 
     //Links laterais.
     .side-links {
+        &__link:focus-visible {
+            .side-links__icon {
+                fill: vars.$primary-color;
+            }
+        }
+
         &__icon {
             fill: vars.$light-grey;
 
