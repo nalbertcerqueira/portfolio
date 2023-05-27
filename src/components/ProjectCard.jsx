@@ -55,7 +55,7 @@ export default function ProjectCard(props) {
                     </ul>
                     <div className="project__external-links">
                         <Link
-                            aria-label={`Link para ${props.name} no github`}
+                            ariaLabel={`Link para ${props.name} no github`}
                             className="project__ext-link"
                             href={props.githubUrl}
                         >
@@ -66,7 +66,7 @@ export default function ProjectCard(props) {
                             />
                         </Link>
                         <Link
-                            aria-label={`Link para o projeto ${props.name}`}
+                            ariaLabel={`Link para o projeto ${props.name}`}
                             className="project__ext-link"
                             href={props.projectUrl}
                         >

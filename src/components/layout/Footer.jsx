@@ -80,7 +80,7 @@ export default function Footer() {
                         <Link
                             className="footer__link-bottom"
                             href="https://github.com/nalbertcerqueira"
-                            aria-label="Link para meu perfil no github"
+                            ariaLabel="Link para meu perfil no github"
                         >
                             Nalbert Cerqueira
                         </Link>{" "}
