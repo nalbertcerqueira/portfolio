@@ -9,10 +9,10 @@ export default function PageHead() {
                 name="viewport"
                 content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
             />
-            <title>Portfólio | Nalbert Cerqueira - Desenvolvedor Front-end</title>
+            <title>Nalbert Cerqueira | Desenvolvedor Web Front-end</title>
             <meta
                 name="description"
-                content="Desenvolvedor Web Front-end com foco em responsividade, otimizações de SEO, acessibilidade web, performance, e com experiência em React, Next.js, JavaScript, SASS, Tailwind CSS, Node.js e APIs Rest."
+                content="Desenvolvedor Web Front-end com experiência em React, Next.js, JavaScript, SASS, Tailwind CSS, Node.js e APIs REST."
             />
             <meta name="copyright" content="Nalbert Cerqueira 2023" />
             <meta property="og:image" content="https://nalbertdev.com/imgs/preview.png" />
@@ -24,15 +24,15 @@ export default function PageHead() {
             <meta property="og:type" content="website" />
             <meta
                 property="og:title"
-                content="Portfólio | Nalbert Cerqueira - Desenvolvedor Front-end"
+                content="Nalbert Cerqueira | Desenvolvedor Web Front-end"
             />
             <meta
                 property="og:description"
-                content="Desenvolvedor Web Front-end com foco em responsividade, otimizações de SEO, acessibilidade web, performance, e com experiência em React, Next.js, JavaScript, SASS, Tailwind CSS, Node.js e APIs Rest."
+                content="Desenvolvedor Web Front-end com experiência em React, Next.js, JavaScript, SASS, Tailwind CSS, Node.js e APIs REST."
             />
             <link rel="icon" type="image/svg+xml" href="/icon.svg" />
             <link rel="apple-touch-icon" type="image/svg+xml" href="/icon.svg" />
-            <link rel="canonical" href="https://nalbertdev.com" />
+            <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"></link>
         </Head>
     )
 }
