@@ -14,7 +14,7 @@ export default function Hero() {
         { id: 2, className: "hero__title hero__title--main", content: "Cerqueira" },
         { id: 3, className: "hero__title hero__title--sub", content: "Desenvolvedor" },
         { id: 4, className: "hero__title hero__title--sub", content: "Web" },
-        { id: 5, className: "hero__title hero__title--sub", content: "Frontend" },
+        { id: 5, className: "hero__title hero__title--sub", content: "Front-end" },
         { id: 6, className: "hero__title hero__title--main", content: "." }
     ]
 
