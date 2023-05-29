@@ -15,7 +15,7 @@ import {
     organizeSkillsData
 } from "../libs/contentful-cms"
 
-//Buscando as informações dos projetos na contenful CMS.
+//Buscando as informações dos projetos e habilidades na contenful CMS.
 export async function getStaticProps() {
     const client = initiateClient()
 
