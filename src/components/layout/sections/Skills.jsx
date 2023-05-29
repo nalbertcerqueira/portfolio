@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+import propTypes from "prop-types"
 import { useState } from "react"
 
 import StackList from "@/src/components/StackList"
@@ -6,9 +7,8 @@ import Subtitle from "@/src/components/Subtitle"
 import useCustomInView from "@/src/hooks/useCustomInView"
 import { skillsVariants } from "@/src/libs/framer-motion"
 import { BsMouse } from "@/src/libs/react-icons"
-import { skillsMap } from "@/src/utils/skills"
 
-export default function Skills() {
+export default function Skills({ skillsCollection }) {
     const [currentId, setCurrentId] = useState(null)
     const { isInView, ref: skillsRef } = useCustomInView({ once: true, amount: 0.25 })
 
@@ -26,11 +26,11 @@ export default function Skills() {
                 <div className="skills__desc-wrapper">
                     <article>
                         <Subtitle
-                            subtitle={skillsMap[currentId]?.name}
+                            subtitle={skillsCollection[currentId]?.name}
                             markerClassName={currentId && `marker--${currentId}`}
                         />
                         <p className="skills__tech-desc">
-                            {skillsMap[currentId]?.description}
+                            {skillsCollection[currentId]?.description}
                         </p>
                     </article>
                 </div>
@@ -80,6 +80,7 @@ export default function Skills() {
                     <StackList
                         animationConfigs={skillsVariants.content}
                         className="skills__stack-list"
+                        skillsData={skillsCollection}
                         onMouseLeave={resetCurrentId}
                         onMouseMove={changeCurrentId}
                     />
@@ -93,4 +94,7 @@ export default function Skills() {
             </div>
         </motion.section>
     )
+}
+Skills.propTypes = {
+    skillsCollection: propTypes.object
 }

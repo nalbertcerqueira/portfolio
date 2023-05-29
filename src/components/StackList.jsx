@@ -1,7 +1,6 @@
 import { motion } from "framer-motion"
 import propTypes from "prop-types"
 
-import { skillsMap } from "../utils/skills"
 import CssIcon from "./icons/CssIcon"
 import ExpressIcon from "./icons/ExpressIcon"
 import GitIcon from "./icons/GitIcon"
@@ -38,6 +37,7 @@ const icons = {
 
 //Lista de tecnologias utilizada em Skills.jsx.
 export default function StackList({
+    skillsData,
     onMouseMove,
     onMouseLeave,
     className,
@@ -46,7 +46,7 @@ export default function StackList({
     function renderListIcons(icons) {
         return icons.map((item) => (
             <li
-                aria-label={skillsMap[item.id].name}
+                aria-label={skillsData[item.id]?.name}
                 data-id={item.id}
                 key={item.id}
                 className="stacks__tech-item"
@@ -85,6 +85,7 @@ export default function StackList({
     )
 }
 StackList.propTypes = {
+    skillsData: propTypes.object,
     onMouseMove: propTypes.func,
     onMouseLeave: propTypes.func,
     className: propTypes.string,
