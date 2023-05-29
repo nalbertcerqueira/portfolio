@@ -233,6 +233,10 @@
     &__text {
         color: vars.$text-white;
         font-weight: 300;
+
+        @include mixins.media-640 {
+            text-align: center;
+        }
     }
 
     &__marker {
@@ -391,6 +395,10 @@
 
     &__tech-desc {
         color: vars.$text-white;
+
+        @include mixins.media-640 {
+            text-align: center;
+        }
     }
 
     &__draft-container {
