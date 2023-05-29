@@ -9,29 +9,36 @@ import About from "../components/layout/sections/About"
 import Hero from "../components/layout/sections/Hero"
 import Projects from "../components/layout/sections/Projects"
 import Skills from "../components/layout/sections/Skills"
-
-import { getFormattedData, initiateClient } from "../libs/contentful-cms"
+import {
+    initiateClient,
+    organizeProjectsData,
+    organizeSkillsData
+} from "../libs/contentful-cms"
 
 //Buscando as informações dos projetos na contenful CMS.
 export async function getStaticProps() {
-    const contentType = process.env.CMS_CONTENT_TYPE
     const client = initiateClient()
 
-    return client
-        .getEntries({
-            content_type: contentType,
+    const [projectsEntries, skillsEntries] = await Promise.all([
+        client.getEntries({
+            content_type: "portfolioProject",
             order: "fields.slug"
+        }),
+        client.getEntries({
+            content_type: "portfolioSkill"
         })
-        .then((entries) => {
-            if (entries.errors) {
-                throw new Error(entries.errors)
-            }
-            const projects = getFormattedData(entries)
-            return { props: { projects }, revalidate: 60 }
-        })
+    ])
+
+    return {
+        props: {
+            projects: organizeProjectsData(projectsEntries),
+            skills: organizeSkillsData(skillsEntries)
+        },
+        revalidate: 60
+    }
 }
 
-export default function Home({ projects }) {
+export default function Home({ projects, skills }) {
     return (
         <>
             <PageHead />
@@ -41,7 +48,7 @@ export default function Home({ projects }) {
                     <Hero />
                     <About />
                     <Projects projectsList={projects || []} />
-                    <Skills />
+                    <Skills skillsCollection={skills || {}} />
                 </Main>
                 <Footer />
                 <ScrollToTopButton />
@@ -50,5 +57,6 @@ export default function Home({ projects }) {
     )
 }
 Home.propTypes = {
-    projects: propTypes.array
+    projects: propTypes.array,
+    skills: propTypes.object
 }
