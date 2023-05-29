@@ -11,8 +11,8 @@ export function initiateClient() {
     return client
 }
 
-//Formatando os dados vindos do CMS antes de utiliza-los.
-export function getFormattedData(entries) {
+//Formatando os dados dos projetos vindos do CMS antes de utiliza-los.
+export function organizeProjectsData(entries) {
     const { items, includes } = entries
 
     const bannersData = includes.Asset.reduce((acc, asset) => {
@@ -37,4 +37,19 @@ export function getFormattedData(entries) {
     }))
 
     return projectsData
+}
+
+//Formatando os dados das habilidades vindas do CMS antes de utiliza-los.
+export function organizeSkillsData(entries) {
+    const { items } = entries
+
+    const skillsData = items.reduce((acc, item) => {
+        acc[item.fields.slug] = {
+            name: item.fields.name,
+            description: item.fields.description
+        }
+        return acc
+    }, {})
+
+    return skillsData
 }
