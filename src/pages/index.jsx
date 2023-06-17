@@ -31,7 +31,7 @@ export async function getStaticProps() {
 
     return {
         props: {
-            projects: organizeProjectsData(projectsEntries),
+            projects: await organizeProjectsData(projectsEntries),
             skills: organizeSkillsData(skillsEntries)
         },
         revalidate: 60
