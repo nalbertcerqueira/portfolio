@@ -74,6 +74,7 @@ export default function About() {
                         <Image
                             className="about__avatar-img"
                             src={profilePicture}
+                            placeholder="blur"
                             alt="Nalbert cerqueira - desenvolvedor frontend."
                         />
                     </motion.div>
