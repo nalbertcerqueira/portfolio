@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
+
 import propTypes from "prop-types"
 import useCustomInView from "../hooks/useCustomInView"
 import { projectsVariants } from "../libs/framer-motion"
@@ -41,6 +42,8 @@ export default function ProjectCard(props) {
                         alt={props.banner.alt}
                         height={props.banner.height}
                         width={props.banner.width}
+                        placeholder="blur"
+                        blurDataURL={props.banner.base64Url}
                     />
                 </Link>
                 <div className="project__content">
