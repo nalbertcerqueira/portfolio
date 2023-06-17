@@ -28,6 +28,9 @@
         "sass": "^1.62.1"
     },
     "dependencies": {
+        "@plaiceholder/next": "^3.0.0",
+        "plaiceholder": "^3.0.0",
+        "sharp": "^0.32.1",
         "contentful": "^10.2.1",
         "framer-motion": "^10.12.12",
         "next": "13.4.2",
