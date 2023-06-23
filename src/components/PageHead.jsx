@@ -32,7 +32,8 @@ export default function PageHead() {
             />
             <link rel="icon" type="image/svg+xml" href="/icon.svg" />
             <link rel="apple-touch-icon" type="image/svg+xml" href="/icon.svg" />
-            <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"></link>
+            <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+            <link rel="canonical" href="https://nalbertdev.com/" />
         </Head>
     )
 }
