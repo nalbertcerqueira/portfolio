@@ -5,23 +5,30 @@ module.exports = {
         node: true
     },
     extends: [
+        "prettier",
+        "next/core-web-vitals",
         "eslint:recommended",
         "plugin:react/recommended",
-        "next/core-web-vitals",
-        "prettier",
-        "plugin:prettier/recommended"
+        "plugin:prettier/recommended",
+        "plugin:@typescript-eslint/recommended"
     ],
-    overrides: [],
+    overrides: [
+        {
+            env: { node: true },
+            files: [".eslintrc.{js,cjs}"],
+            parserOptions: {
+                sourceType: "script"
+            }
+        }
+    ],
+    parser: "@typescript-eslint/parser",
     parserOptions: {
-        ecmaFeatures: {
-            jsx: true
-        },
         ecmaVersion: "latest",
         sourceType: "module"
     },
-    plugins: ["react", "prettier"],
+    plugins: ["@typescript-eslint", "react", "prettier"],
     rules: {
-        "prettier/prettier": ["error"],
-        "react/prop-types": ["error"]
+        "react/react-in-jsx-scope": "off",
+        "prettier/prettier": ["error"]
     }
 }

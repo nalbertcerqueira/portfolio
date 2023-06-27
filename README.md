@@ -27,17 +27,17 @@ O portfólio foi desenvolvido principalmente com Next.js e SASS, e faz uso de um
 
 **🚀 Stack do projeto**
 
--   HTML
--   CSS
--   JavaScript
--   NextJS
--   SASS
+- HTML
+- CSS
+- JavaScript
+- NextJS
+- SASS
 
 **📚 Outras libs**
 
--   React icons
--   Framer motion
--   Contentful CMS
+- React icons
+- Framer motion
+- Contentful CMS
 
 ## 💵 Licença
 

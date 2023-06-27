@@ -1,41 +1,38 @@
 {
-    "name": "portfolio",
+    "name": "08-portfolio",
     "version": "1.0.0",
     "private": true,
-    "files": [
-        "public",
-        "src",
-        "jsconfig.json",
-        "next.config.js",
-        "postcss.config.js"
-    ],
     "scripts": {
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
         "lint": "next lint"
     },
+    "dependencies": {
+        "@plaiceholder/next": "^3.0.0",
+        "contentful": "^10.3.0",
+        "framer-motion": "^10.12.17",
+        "next": "13.4.7",
+        "plaiceholder": "^3.0.0",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "react-icons": "^4.10.1",
+        "sharp": "^0.32.1"
+    },
     "devDependencies": {
+        "@types/node": "20.3.1",
+        "@types/react": "18.2.14",
+        "@types/react-dom": "18.2.6",
+        "@typescript-eslint/eslint-plugin": "^5.60.0",
+        "@typescript-eslint/parser": "^5.60.0",
         "autoprefixer": "^10.4.14",
-        "eslint": "8.40.0",
-        "eslint-config-next": "13.4.2",
+        "eslint": "8.43.0",
+        "eslint-config-next": "13.4.7",
         "eslint-config-prettier": "^8.8.0",
         "eslint-plugin-prettier": "^4.2.1",
         "eslint-plugin-react": "^7.32.2",
-        "postcss": "^8.4.23",
-        "prettier": "^2.8.8",
-        "prop-types": "^15.8.1",
-        "sass": "^1.62.1"
-    },
-    "dependencies": {
-        "@plaiceholder/next": "^3.0.0",
-        "plaiceholder": "^3.0.0",
-        "sharp": "^0.32.1",
-        "contentful": "^10.2.1",
-        "framer-motion": "^10.12.12",
-        "next": "13.4.2",
-        "react": "18.2.0",
-        "react-dom": "18.2.0",
-        "react-icons": "^4.8.0"
+        "postcss": "^8.4.24",
+        "sass": "^1.63.6",
+        "typescript": "5.1.3"
     }
 }
