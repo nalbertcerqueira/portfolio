@@ -31,6 +31,7 @@ O portfólio foi desenvolvido principalmente com Next.js e SASS, e faz uso de um
 - HTML
 - CSS
 - JavaScript
+- Typescript
 - NextJS
 - SASS
 
