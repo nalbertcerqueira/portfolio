@@ -78,7 +78,7 @@ export default function Header() {
                     <nav className={classNames.navbar.join(" ").trim()}>
                         <CloseMenuButton
                             ariaLabel="Ocultar menu de navegação"
-                            handleClick={() => 25}
+                            handleClick={() => setIsOpen(false)}
                         />
                         <ul className="navbar__list header__nav-list">
                             {sectionLinks.map((link, i) => (
