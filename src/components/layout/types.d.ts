@@ -1,3 +1,5 @@
+import { IconType } from "react-icons/lib"
+
 export interface SocialLink {
     id: number
     href: string
