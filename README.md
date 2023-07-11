@@ -21,25 +21,26 @@ O portfólio foi desenvolvido principalmente com Next.js e SASS, e faz uso de um
 
 1. Clone este repositório;
 2. Baixe as dependências deste projeto com npm install;
-3. Inicie a aplicação com npm run dev;
-4. Navegue até http://localhost:3000/ para visualizar o projeto.
+3. Crie um arquivo .env.local na raiz do projeto contendo as variáveis de ambiente presentes em .env.sample com valores de sua preferência.
+4. Inicie a aplicação com npm run dev;
+5. Navegue até http://localhost:3000/ para visualizar o projeto.
 
 ## 💻 Tecnologias utilizadas
 
 **🚀 Stack do projeto**
 
-- HTML
-- CSS
-- JavaScript
-- Typescript
-- NextJS
-- SASS
+-   HTML
+-   CSS
+-   JavaScript
+-   Typescript
+-   NextJS
+-   SASS
 
 **📚 Outras libs**
 
-- React icons
-- Framer motion
-- Contentful CMS
+-   React icons
+-   Framer motion
+-   Contentful CMS
 
 ## 💵 Licença
 
