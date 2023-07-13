@@ -14,7 +14,7 @@ interface ProviderProps {
 export const ThemeContext = createContext<ThemeContext>({} as ThemeContext)
 
 export default function ThemeProvider({ children }: ProviderProps) {
-    const [theme, setTheme] = useLocalStorage("light", "theme")
+    const [theme, setTheme] = useLocalStorage<string>("light", "theme")
 
     useEffect(toggleDocumentClassName, [theme])
 
@@ -27,11 +27,7 @@ export default function ThemeProvider({ children }: ProviderProps) {
         html.className = theme === "dark" ? "dark-mode" : ""
     }
 
-    return (
-        <ThemeContext.Provider value={{ theme, toggleTheme }}>
-            {children}
-        </ThemeContext.Provider>
-    )
+    return <ThemeContext.Provider value={{ theme, toggleTheme }}>{children}</ThemeContext.Provider>
 }
 ThemeProvider.propTypes = {
     children: propTypes.node
