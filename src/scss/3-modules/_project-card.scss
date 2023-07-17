@@ -9,18 +9,34 @@
     }
 
     &__skew {
-        @include mixins.flex(
-            $gap: 1.5rem,
-            $justify: flex-start,
-            $items: stretch,
-            $direction: column
-        );
+        @include mixins.flex($gap: 1.5rem, $justify: flex-start, $items: stretch, $direction: column);
         height: 100%;
         border-radius: 0.75rem;
         padding: 1.5rem;
         transition: box-shadow vars.$transition-time;
-        box-shadow: 0.5rem 0.5rem 0 0.125rem vars.$middle-dark,
-            0 0 0 0.125rem vars.$middle-dark, 0.5rem 0.5rem 1rem 0.25rem #00000038;
+        box-shadow: 0.5rem 0.5rem 0 0.125rem vars.$middle-dark, 0 0 0 0.125rem vars.$middle-dark,
+            0.5rem 0.5rem 1rem 0.25rem #00000038;
+        overflow: hidden;
+        position: relative;
+
+        &:hover::after {
+            left: 135%;
+            opacity: 1;
+            transition: left 1.125s ease-in-out;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: -35%;
+            height: 125%;
+            width: 2rem;
+            background-color: rgba(vars.$white, 0.9);
+            filter: blur(70px);
+            transform: translateY(-50%) rotate(15deg);
+            opacity: 0;
+        }
     }
 
     &__link-banner {
@@ -57,8 +73,7 @@
         font-size: 1.75rem;
         text-decoration: underline;
         text-decoration-color: transparent;
-        transition: text-decoration-color vars.$transition-time,
-            color vars.$transition-time;
+        transition: text-decoration-color vars.$transition-time, color vars.$transition-time;
 
         &:hover,
         &:focus-visible {
