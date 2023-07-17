@@ -52,13 +52,10 @@ export default function Hero() {
         >
             <div className="hero__inner-container">
                 <div className="hero__content-wrapper">
-                    <motion.div
-                        variants={heroVariants.avatar}
-                        className="hero__avatar-container"
-                    >
+                    <motion.div variants={heroVariants.avatar} className="hero__avatar-container">
                         <Image
                             sizes="(max-width: 920px) 100vw, 50vw"
-                            priority={true}
+                            placeholder="blur"
                             className="hero__avatar-img"
                             src={profilePicture}
                             alt="Nalbert cerqueira - desenvolvedor frontend."
