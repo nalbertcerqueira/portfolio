@@ -7,6 +7,8 @@
 
 # files
 package-lock.json
+/public/robots.txt
+/public/sitemap*.xml
 
 # testing
 /coverage
