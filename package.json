@@ -6,13 +6,15 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint"
+        "lint": "next lint",
+        "postbuild": "next-sitemap --config next-sitemap.config.js"
     },
     "dependencies": {
         "@plaiceholder/next": "^3.0.0",
         "contentful": "^10.3.0",
         "framer-motion": "^10.12.17",
         "next": "13.4.7",
+        "next-sitemap": "^4.1.8",
         "plaiceholder": "^3.0.0",
         "react": "18.2.0",
         "react-dom": "18.2.0",
