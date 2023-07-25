@@ -35,9 +35,7 @@ export default function Skills({ skillsMap }: SkillsProps) {
                             title={skillsMap[currentId]?.name}
                             markerClassName={currentId && `marker--${currentId}`}
                         />
-                        <p className="skills__tech-desc">
-                            {skillsMap[currentId]?.description}
-                        </p>
+                        <p className="skills__tech-desc">{skillsMap[currentId]?.description}</p>
                     </article>
                 </div>
             )
@@ -45,17 +43,12 @@ export default function Skills({ skillsMap }: SkillsProps) {
         return (
             <div className="skills__draft-container">
                 <p className="skills__desc-draft">
-                    {currentId ||
-                        "Passe o cursor do mouse sobre cada uma das tecnologias para saber mais."}
+                    {currentId || "Passe o cursor do mouse sobre cada uma das tecnologias para saber mais."}
                 </p>
                 <p className="skills__desc-draft skills__desc-draft--mobile">
                     {currentId || "Toque nos ícones das tecnologias para saber mais."}
                 </p>
-                <BsMouse
-                    aria-hidden="true"
-                    focusable="false"
-                    className="skills__hover-icon"
-                />
+                <BsMouse aria-hidden="true" focusable="false" className="skills__hover-icon" />
             </div>
         )
     }
@@ -74,15 +67,9 @@ export default function Skills({ skillsMap }: SkillsProps) {
                     <motion.h2 variants={skillsVariants.title} className="skills__title">
                         Tecnologias que utilizo
                     </motion.h2>
-                    <motion.span
-                        variants={skillsVariants.titleLine}
-                        className="skills__title-line"
-                    />
+                    <motion.span variants={skillsVariants.titleLine} className="skills__title-line" />
                 </div>
-                <motion.div
-                    variants={skillsVariants.contentWrapper}
-                    className="skills__content"
-                >
+                <motion.div variants={skillsVariants.contentWrapper} className="skills__content">
                     <StackList
                         animationConfigs={skillsVariants.content}
                         className="skills__stack-list"
@@ -90,10 +77,7 @@ export default function Skills({ skillsMap }: SkillsProps) {
                         onMouseLeave={resetCurrentId}
                         onMouseMove={changeCurrentId}
                     />
-                    <motion.div
-                        variants={skillsVariants.content}
-                        className="skills__description-box"
-                    >
+                    <motion.div variants={skillsVariants.content} className="skills__description-box">
                         {renderDescription()}
                     </motion.div>
                 </motion.div>

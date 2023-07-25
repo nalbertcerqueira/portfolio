@@ -10,10 +10,7 @@ export default function CssIcon({ className }: { className: string }) {
             aria-hidden="true"
             focusable="false"
         >
-            <path
-                fill="#1b73ba"
-                d="M10.383 126.892 0 0l124 .255-10.979 126.637-50.553 14.638z"
-            />
+            <path fill="#1b73ba" d="M10.383 126.892 0 0l124 .255-10.979 126.637-50.553 14.638z" />
             <path fill="#1c88c7" d="M62.468 129.275V12.085l51.064.17-9.106 104.85z" />
             <path
                 fill="#fff"

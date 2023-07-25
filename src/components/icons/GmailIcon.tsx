@@ -24,10 +24,7 @@ export default function GmailIcon({ className }: { className: string }) {
                         d="M395.636 99.727V251L512 163.727v-46.545c0-43.142-49.25-67.782-83.782-41.891z"
                     />
                 </g>
-                <path
-                    fill="#ea4335"
-                    d="M116.364 251V99.727L256 204.455 395.636 99.727V251L256 355.727z"
-                />
+                <path fill="#ea4335" d="M116.364 251V99.727L256 204.455 395.636 99.727V251L256 355.727z" />
                 <path
                     fill="#c5221f"
                     fillRule="nonzero"

@@ -28,10 +28,7 @@ export default function SideLinks({ animationConfigs }: SideLinksProps) {
 
     return (
         <motion.div variants={animationConfigs.container} className="side-links">
-            <motion.span
-                variants={animationConfigs.line}
-                className="side-links__bar"
-            ></motion.span>
+            <motion.span variants={animationConfigs.line} className="side-links__bar"></motion.span>
             <ul className="side-links__list">
                 <motion.li variants={animationConfigs.listItem}>
                     <Link

@@ -5,10 +5,7 @@ export default function PageHead() {
         <Head>
             <meta charSet="UTF-8" />
             <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-            <meta
-                name="viewport"
-                content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
-            />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
             <title>Nalbert Cerqueira | Desenvolvedor Web Front-end</title>
             <meta
                 name="description"
@@ -22,10 +19,7 @@ export default function PageHead() {
             <meta property="og:locale" content="pt_BR" />
             <meta property="og:url" content="https://nalbertdev.com" />
             <meta property="og:type" content="website" />
-            <meta
-                property="og:title"
-                content="Nalbert Cerqueira | Desenvolvedor Web Front-end"
-            />
+            <meta property="og:title" content="Nalbert Cerqueira | Desenvolvedor Web Front-end" />
             <meta
                 property="og:description"
                 content="Desenvolvedor Web Front-end com experiência em React, Next.js, JavaScript, SASS, Tailwind CSS, Node.js e APIs REST."

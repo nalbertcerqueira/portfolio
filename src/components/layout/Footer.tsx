@@ -68,10 +68,7 @@ export default function Footer() {
                 <div className="footer__attributions">
                     <p className="footer__copyright">
                         Copyright © 2023{" "}
-                        <Link
-                            className="footer__link-bottom"
-                            href="https://nalbertdev.com"
-                        >
+                        <Link className="footer__link-bottom" href="https://nalbertdev.com">
                             nalbertdev.com.
                         </Link>{" "}
                         Todos os direitos reservados.

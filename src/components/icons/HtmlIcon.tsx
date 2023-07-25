@@ -10,10 +10,7 @@ export default function HtmlIcon({ className }: { className: string }) {
             aria-hidden="true"
             focusable="false"
         >
-            <path
-                fill="#e34f26"
-                d="M10.383 126.894 0 0l124 .255-10.979 126.639-50.553 14.638z"
-            />
+            <path fill="#e34f26" d="M10.383 126.894 0 0l124 .255-10.979 126.639-50.553 14.638z" />
             <path fill="#ef652a" d="M62.468 129.277V12.085l51.064.17-9.106 104.851z" />
             <path
                 fill="#fff"

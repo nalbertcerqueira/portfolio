@@ -44,11 +44,7 @@ export default function Header() {
             "header__inner-container",
             `${isScrollOnTop ? "" : "header__inner-container--thin"}`
         ],
-        header: [
-            "header",
-            `${isScrollOnTop ? "" : "header--shaded"}`,
-            `${isHidden ? "header--hidden" : ""}`
-        ]
+        header: ["header", `${isScrollOnTop ? "" : "header--shaded"}`, `${isHidden ? "header--hidden" : ""}`]
     }
 
     return (
@@ -60,10 +56,7 @@ export default function Header() {
             className={classNames.header.join(" ").trim()}
         >
             <div className={classNames.innerContainer.join(" ").trim()}>
-                <OpenMenuButton
-                    handleClick={() => setIsOpen(true)}
-                    ariaLabel="Exibir menu de navegação"
-                />
+                <OpenMenuButton handleClick={() => setIsOpen(true)} ariaLabel="Exibir menu de navegação" />
                 <Link
                     className="header__home"
                     aria-label="início"

@@ -69,10 +69,7 @@ export default function StackList(props: StackListProps) {
     }
 
     return (
-        <motion.div
-            variants={props.animationConfigs}
-            className={`stacks ${props.className || ""}`.trim()}
-        >
+        <motion.div variants={props.animationConfigs} className={`stacks ${props.className || ""}`.trim()}>
             <ul
                 onMouseLeave={props.onMouseLeave}
                 onMouseMove={props.onMouseMove}

@@ -10,8 +10,7 @@ export default function ScrollToTopButton() {
     //o hook useIntersectionObserver.
     const callback = useCallback((entries: IntersectionObserverEntry[]): void => {
         const entry = entries[0]
-        const isIntersectingOrAboveTarget =
-            entry.isIntersecting || entry.boundingClientRect.y < 0
+        const isIntersectingOrAboveTarget = entry.isIntersecting || entry.boundingClientRect.y < 0
 
         setIsShowing(isIntersectingOrAboveTarget)
     }, [])
@@ -23,15 +22,9 @@ export default function ScrollToTopButton() {
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             type="button"
             aria-label="Retornar ao topo da página."
-            className={`btn btn--scrolltop ${
-                isShowing ? "btn--scrolltop--show" : ""
-            }`.trim()}
+            className={`btn btn--scrolltop ${isShowing ? "btn--scrolltop--show" : ""}`.trim()}
         >
-            <MdKeyboardDoubleArrowUp
-                className="btn--scrolltop__icon"
-                aria-hidden="true"
-                focusable="false"
-            />
+            <MdKeyboardDoubleArrowUp className="btn--scrolltop__icon" aria-hidden="true" focusable="false" />
         </button>
     )
 }

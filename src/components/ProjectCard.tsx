@@ -65,9 +65,7 @@ export default function ProjectCard(props: ProjectCardProps) {
                         </Link>
                     </h3>
                     <p className="project__description">{props.children}</p>
-                    <ul className="project__tech-list">
-                        {renderTechItems(props.techList)}
-                    </ul>
+                    <ul className="project__tech-list">{renderTechItems(props.techList)}</ul>
                     <div className="project__external-links">
                         <Link
                             ariaLabel={`Link para ${props.name} no github`}
