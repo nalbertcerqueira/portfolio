@@ -13,6 +13,7 @@ import NodejsIcon from "./icons/NodejsIcon"
 import ReactIcon from "./icons/ReactIcon"
 import SassIcon from "./icons/SassIcon"
 import TailwindIcon from "./icons/TailwindIcon"
+import TypescriptIcon from "./icons/TypescriptIcon"
 import WebpackIcon from "./icons/WebpackIcon"
 
 interface StackListProps {
@@ -49,6 +50,7 @@ const icons: IconsMap = {
         { id: "node", icon: NodejsIcon },
         { id: "webpack", icon: WebpackIcon },
         { id: "git", icon: GitIcon },
+        { id: "ts", icon: TypescriptIcon },
         { id: "github", icon: GithubBigIcon }
     ]
 }
