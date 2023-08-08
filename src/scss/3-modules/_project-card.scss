@@ -14,7 +14,9 @@
         border-radius: 0.75rem;
         padding: 1.5rem;
         transition: box-shadow vars.$transition-time;
-        box-shadow: 0.5rem 0.5rem 0 0.125rem vars.$middle-dark, 0 0 0 0.125rem vars.$middle-dark,
+        box-shadow:
+            0.5rem 0.5rem 0 0.125rem vars.$middle-dark,
+            0 0 0 0.125rem vars.$middle-dark,
             0.5rem 0.5rem 1rem 0.25rem #00000038;
         overflow: hidden;
         position: relative;
@@ -36,6 +38,7 @@
             filter: blur(70px);
             transform: translateY(-50%) rotate(15deg);
             opacity: 0;
+            pointer-events: none;
         }
     }
 
@@ -73,7 +76,9 @@
         font-size: 1.75rem;
         text-decoration: underline;
         text-decoration-color: transparent;
-        transition: text-decoration-color vars.$transition-time, color vars.$transition-time;
+        transition:
+            text-decoration-color vars.$transition-time,
+            color vars.$transition-time;
 
         &:hover,
         &:focus-visible {
@@ -104,7 +109,9 @@
         border-radius: 0.25rem;
         border: 1px solid vars.$light-grey;
         letter-spacing: 1px;
-        transition: color vars.$transition-time, border-color vars.$transition-time,
+        transition:
+            color vars.$transition-time,
+            border-color vars.$transition-time,
             font-weight vars.$transition-time;
     }
 
@@ -117,7 +124,9 @@
         @include mixins.flex;
         padding: 0.5rem;
         border-radius: 0.25rem;
-        transition: transform vars.$transition-time, box-shadow vars.$transition-time;
+        transition:
+            transform vars.$transition-time,
+            box-shadow vars.$transition-time;
 
         &:hover,
         &:focus-visible {
