@@ -15,14 +15,13 @@
         @content;
     }
 }
+@mixin media-430 {
+    @media only screen and (max-width: 430px) {
+        @content;
+    }
+}
 
-@mixin flex(
-    $justify: center,
-    $items: center,
-    $gap: 0rem,
-    $direction: row,
-    $wrap: nowrap
-) {
+@mixin flex($justify: center, $items: center, $gap: 0rem, $direction: row, $wrap: nowrap) {
     display: flex;
     justify-content: $justify;
     align-items: $items;
