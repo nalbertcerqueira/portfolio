@@ -26,11 +26,7 @@
     }
 
     &__content-wrapper {
-        @include mixins.flex(
-            $justify: space-between,
-            $direction: row-reverse,
-            $gap: 2rem
-        );
+        @include mixins.flex($justify: space-between, $direction: row-reverse, $gap: 2rem);
         width: 100%;
 
         @include mixins.media-920 {
@@ -126,7 +122,9 @@
         background-color: vars.$middle-dark;
         border: 0.125rem solid vars.$middle-dark;
         border-radius: $avatar-border-radius;
-        transition: transform vars.$transition-time, border-color vars.$transition-time,
+        transition:
+            transform vars.$transition-time,
+            border-color vars.$transition-time,
             background-color vars.$transition-time;
     }
 
@@ -153,10 +151,7 @@
     }
 
     &__title-box {
-        @include mixins.section-title-box(
-            $parent: ".about",
-            $line-bg-color: rgba(vars.$white, 0.6)
-        );
+        @include mixins.section-title-box($parent: ".about", $line-bg-color: rgba(vars.$white, 0.6));
     }
 
     &__title {
@@ -261,9 +256,12 @@
         height: 3.75rem;
         border-radius: 0.25rem;
         background-color: vars.$default-dark;
-        box-shadow: 0.25rem 0.25rem 0.5rem #00000091,
+        box-shadow:
+            0.25rem 0.25rem 0.5rem #00000091,
             0 0 0 0.125rem inset rgba(vars.$light-dark, 0.25);
-        transition: transform vars.$transition-time, box-shadow vars.$transition-time;
+        transition:
+            transform vars.$transition-time,
+            box-shadow vars.$transition-time;
 
         &:focus-visible {
             outline-color: vars.$white;
@@ -272,7 +270,8 @@
         &:hover,
         &:focus-visible {
             transform: translate(-0.25rem, -0.25rem);
-            box-shadow: 0.5rem 0.5rem 0.75rem #00000091,
+            box-shadow:
+                0.5rem 0.5rem 0.75rem #00000091,
                 0 0 0 0.125rem inset rgba(vars.$light-dark, 0.25);
 
             .about__social-icon {
@@ -305,10 +304,7 @@
     }
 
     &__title-box {
-        @include mixins.section-title-box(
-            $parent: ".projects",
-            $line-bg-color: rgba(vars.$middle-dark, 0.6)
-        );
+        @include mixins.section-title-box($parent: ".projects", $line-bg-color: rgba(vars.$middle-dark, 0.6));
     }
 
     &__title {
@@ -349,10 +345,7 @@
     }
 
     &__title-box {
-        @include mixins.section-title-box(
-            $parent: ".skills",
-            $line-bg-color: rgba(vars.$white, 0.6)
-        );
+        @include mixins.section-title-box($parent: ".skills", $line-bg-color: rgba(vars.$white, 0.6));
     }
 
     &__title {
