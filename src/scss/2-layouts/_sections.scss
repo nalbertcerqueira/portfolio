@@ -240,12 +240,19 @@
     }
 
     &__social-wrapper {
-        @include mixins.flex($gap: 2rem, $justify: flex-start, $wrap: wrap);
         margin-top: 1.25rem;
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(4, 3.75rem);
 
         @include mixins.media-640 {
             justify-content: center;
             margin-top: 1.75rem;
+        }
+
+        @include mixins.media-430 {
+            grid-template-columns: repeat(2, 3.75rem);
+            grid-template-rows: repeat(2, 3.75rem);
         }
     }
 
