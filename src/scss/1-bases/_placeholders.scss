@@ -32,13 +32,16 @@
     flex-shrink: 0;
     font-weight: 600;
     font-size: 2.25rem;
-    transition: color vars.$transition-time, background-color vars.$transition-time;
+    transition:
+        color vars.$transition-time,
+        background-color vars.$transition-time;
 
     @include mixins.media-1040 {
         font-size: 2rem;
     }
 
     @include mixins.media-640 {
+        flex-shrink: 1;
         padding: 0;
         margin: 0 auto;
         text-align: center;
