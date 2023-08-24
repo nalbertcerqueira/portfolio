@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react"
 export default function useLogoAnimation(interval: number) {
     const [colorIndex, setColorIndex] = useState<number>(0)
     const colorsList = ["#131313", "#e65656", "#567ce6", "#54e661", "#555555"]
-    const timerRef = useRef<NodeJS.Timer | null>(null)
+    const timerRef = useRef<NodeJS.Timeout | null>(null)
 
     useEffect(() => {
         return () => {
