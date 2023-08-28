@@ -1,10 +1,10 @@
-import { ReactNode } from "react"
+import { HTMLAttributeAnchorTarget, ReactNode } from "react"
 
 interface LinkProps {
     className: string
     ariaLabel?: string
     href: string
-    target?: "_blank" | "_parent" | "_self" | "_top"
+    target?: HTMLAttributeAnchorTarget
     children: ReactNode
 }
 

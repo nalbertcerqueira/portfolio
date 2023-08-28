@@ -1,3 +1,4 @@
+import { HTMLAttributeAnchorTarget } from "react"
 import { IconType } from "react-icons/lib"
 
 export interface SocialLink {
@@ -6,5 +7,5 @@ export interface SocialLink {
     ariaLabel: string
     icon: IconType
     iconStyle?: CSSProperties
-    target?: "_blank" | "_parent" | "_self" | "_top"
+    target?: HTMLAttributeAnchorTarget
 }
