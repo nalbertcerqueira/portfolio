@@ -22,7 +22,7 @@ export default function PageHead() {
             <meta property="og:title" content="Nalbert Cerqueira | Desenvolvedor Web Front-end" />
             <meta
                 property="og:description"
-                content="Desenvolvedor Web Front-end com experiência em React, Next.js, JavaScript, SASS, Tailwind CSS, Node.js e APIs REST."
+                content="Desenvolvedor Web Front-end com experiência em React.js, Next.js, TypeScript, JavaScript, SASS, Tailwind CSS, Node.js e APIs REST."
             />
             <link rel="icon" type="image/svg+xml" href="/icon.svg" />
             <link rel="apple-touch-icon" type="image/svg+xml" href="/icon.svg" />
