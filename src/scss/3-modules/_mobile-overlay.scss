@@ -13,7 +13,6 @@
     &--open {
         display: none;
         opacity: 100%;
-        visibility: visible;
 
         @include mixins.media-920 {
             display: block;
