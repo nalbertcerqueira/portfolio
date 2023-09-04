@@ -9,7 +9,9 @@
     width: 100vw;
     backdrop-filter: blur(0.25rem);
     background-color: rgba(vars.$primary-color, 0.8);
-    transition: transform vars.$transition-time, box-shadow vars.$transition-time,
+    transition:
+        transform vars.$transition-time,
+        box-shadow vars.$transition-time,
         background-color vars.$transition-time;
 
     &--shaded {
@@ -45,7 +47,8 @@
         color: vars.$white;
         font-weight: 600;
         font-size: 1.25rem;
-        transition: background-color vars.$transition-time,
+        transition:
+            background-color vars.$transition-time,
             box-shadow vars.$transition-time;
     }
 
@@ -58,12 +61,10 @@
             height: 100vh;
             width: 100%;
             padding: 1.5rem;
-            background: linear-gradient(
-                to bottom,
-                rgba(vars.$middle-dark, 0.5),
-                transparent
-            );
-            transition: 0.5s;
+            background: linear-gradient(to bottom, rgba(vars.$middle-dark, 0.5), transparent);
+            transition:
+                visibility 0.5s,
+                opacity 0.5s;
         }
 
         &--open {
@@ -80,7 +81,9 @@
             border-radius: 0.75rem;
             padding: 0.5rem;
             transform: translateY(-100%);
-            transition: background-color vars.$transition-time, transform 0.5s,
+            transition:
+                background-color vars.$transition-time,
+                transform 0.5s,
                 padding 0.5s 0.35s;
         }
 
