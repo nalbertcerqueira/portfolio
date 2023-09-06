@@ -1,4 +1,3 @@
-import propTypes from "prop-types"
 import { ReactNode, createContext, useEffect } from "react"
 import useLocalStorage from "../hooks/useLocalStorage"
 
@@ -28,7 +27,4 @@ export default function ThemeProvider({ children }: ProviderProps) {
     }
 
     return <ThemeContext.Provider value={{ theme, toggleTheme }}>{children}</ThemeContext.Provider>
-}
-ThemeProvider.propTypes = {
-    children: propTypes.node
 }

@@ -1,5 +1,4 @@
 import { motion } from "framer-motion"
-import propTypes from "prop-types"
 import { useContext } from "react"
 import { IconBaseProps } from "react-icons/lib"
 
@@ -73,7 +72,4 @@ export default function SideLinks({ animationConfigs }: SideLinksProps) {
             </ul>
         </motion.div>
     )
-}
-SideLinks.propTypes = {
-    animationConfigs: propTypes.object
 }
