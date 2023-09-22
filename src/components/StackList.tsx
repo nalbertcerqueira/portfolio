@@ -15,6 +15,7 @@ import SassIcon from "./icons/SassIcon"
 import TailwindIcon from "./icons/TailwindIcon"
 import TypescriptIcon from "./icons/TypescriptIcon"
 import WebpackIcon from "./icons/WebpackIcon"
+import MongodbIcon from "./icons/MongodbIcon"
 
 interface StackListProps {
     className: string
@@ -43,6 +44,7 @@ const icons: IconsMap = {
     secondSection: [
         { id: "js", icon: JavaScriptIcon },
         { id: "express", icon: ExpressIcon },
+        { id: "mongodb", icon: MongodbIcon },
         { id: "tailwind", icon: TailwindIcon },
         { id: "next", icon: NextIcon }
     ],
