@@ -42,6 +42,6 @@ O portfólio foi desenvolvido principalmente com Next.js e SASS, e faz uso de um
 -   Framer motion
 -   Contentful CMS
 
-## 💵 Licença
+## 📝 Licença
 
-**O uso de todos os arquivos deste projeto é limitado apenas para fins de estudos.**
+MIT License © [MIT License ](./LICENSE)
