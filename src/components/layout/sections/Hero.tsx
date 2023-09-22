@@ -70,7 +70,7 @@ export default function Hero() {
                             target="_blank"
                             role="button"
                             aria-label="Obtenha uma cópia do meu CV"
-                            href="https://assets.ctfassets.net/1esf6nnkgil4/5Wxachw5dbXufCFqnYSxBj/80951bc8fb2b3b554043a11a49cae10d/CV_-_Nalbert_Cerqueira.pdf"
+                            href="https://assets.ctfassets.net/1esf6nnkgil4/5Wxachw5dbXufCFqnYSxBj/90a93a42bcdafa7d1dcbfcd79c84aa8f/CV_-_Nalbert_Cerqueira_-_Dev.pdf"
                             className="btn btn--download hero__btn"
                             rel="noreferrer"
                         >
