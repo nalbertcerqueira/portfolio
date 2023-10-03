@@ -15,9 +15,9 @@ export default function ThemeButton({ theme, changeTheme }: ThemeButtonProps) {
             type="button"
         >
             {theme === "dark" ? (
-                <FiSun className={`btn--theme__dark-icon `} />
+                <FiSun focusable="false" aria-hidden="true" className={`btn--theme__dark-icon `} />
             ) : (
-                <BsMoonStarsFill className="btn--theme__light-icon" />
+                <BsMoonStarsFill focusable="false" aria-hidden="true" className="btn--theme__light-icon" />
             )}
         </button>
     )
