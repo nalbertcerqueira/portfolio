@@ -29,7 +29,7 @@ export default function Skills({ skillsMap }: SkillsProps) {
     function renderDescription(): JSX.Element {
         if (currentId) {
             return (
-                <div className="skills__desc-wrapper">
+                <div aria-live="polite" aria-atomic="true" className="skills__desc-wrapper">
                     <article>
                         <MarkerHeading
                             title={skillsMap[currentId]?.name}
@@ -41,7 +41,7 @@ export default function Skills({ skillsMap }: SkillsProps) {
             )
         }
         return (
-            <div className="skills__draft-container">
+            <div aria-live="polite" aria-atomic="true" className="skills__draft-container">
                 <p className="skills__desc-draft">
                     {currentId || "Passe o cursor do mouse sobre cada uma das tecnologias para saber mais."}
                 </p>
