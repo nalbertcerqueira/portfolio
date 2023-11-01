@@ -9,7 +9,7 @@ export default function PageHead() {
             <title>Nalbert Cerqueira | Desenvolvedor Web Front-end</title>
             <meta
                 name="description"
-                content="Desenvolvedor Web Front-end com experiência em React, Next.js, JavaScript, SASS, Tailwind CSS, Node.js e APIs REST."
+                content="Desenvolvedor Front-end com experiência em React, NextJS, JavaScript, TypeScript, SASS, Tailwind CSS, NodeJS, Mongodb e APIs REST."
             />
             <meta name="copyright" content="Nalbert Cerqueira 2023" />
             <meta property="og:image" content="https://nalbertdev.com/imgs/preview.png" />
