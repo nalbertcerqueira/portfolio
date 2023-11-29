@@ -13,17 +13,23 @@ export default function PageHead() {
             />
             <meta name="copyright" content="Nalbert Cerqueira 2023" />
             <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:title" content="Nalbert Cerqueira | Desenvolvedor Web Front-end" />
+            <meta
+                name="twitter:description"
+                content="Desenvolvedor Front-end com experiência em React, NextJS, JavaScript, TypeScript, SASS, Tailwind CSS, NodeJS, Mongodb e APIs REST."
+            />
+            <meta name="twitter:image" content="https://nalbertdev.com/imgs/preview.webp" />
             <meta property="og:image" content="https://nalbertdev.com/imgs/preview.webp" />
             <meta property="og:image:type" content="image/webp" />
             <meta property="og:image:width" content="1200" />
             <meta property="og:image:height" content="620" />
-            <meta property="og:locale" content="pt_BR" />
+            <meta property="og:site_name" content="nalbertdev.com" />
             <meta property="og:url" content="https://nalbertdev.com" />
             <meta property="og:type" content="website" />
             <meta property="og:title" content="Nalbert Cerqueira | Desenvolvedor Web Front-end" />
             <meta
                 property="og:description"
-                content="Desenvolvedor Web Front-end com experiência em React.js, Next.js, TypeScript, JavaScript, SASS, Tailwind CSS, Node.js e APIs REST."
+                content="Desenvolvedor Front-end com experiência em React, NextJS, JavaScript, TypeScript, SASS, Tailwind CSS, NodeJS, Mongodb e APIs REST."
             />
             <link rel="icon" type="image/svg+xml" href="/icon.svg" />
             <link rel="apple-touch-icon" type="image/svg+xml" href="/icon.svg" />
