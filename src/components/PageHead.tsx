@@ -12,10 +12,10 @@ export default function PageHead() {
                 content="Desenvolvedor Front-end com experiência em React, NextJS, JavaScript, TypeScript, SASS, Tailwind CSS, NodeJS, Mongodb e APIs REST."
             />
             <meta name="copyright" content="Nalbert Cerqueira 2023" />
-            <meta property="og:image" content="https://nalbertdev.com/imgs/preview.png" />
+            <meta property="og:image" content="https://nalbertdev.com/imgs/preview.webp" />
             <meta property="og:image:type" content="image/png" />
-            <meta property="og:image:width" content="1366" />
-            <meta property="og:image:height" content="652" />
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="620" />
             <meta property="og:locale" content="pt_BR" />
             <meta property="og:url" content="https://nalbertdev.com" />
             <meta property="og:type" content="website" />
