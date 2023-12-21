@@ -1,5 +1,5 @@
 import { CustomVariants } from "@/types/general"
-import { matchMediaQuery } from "../utils/methods"
+import { matchMediaQuery } from "../../utils/methods"
 
 const { isMobile } = matchMediaQuery("(max-width: 920px)")
 

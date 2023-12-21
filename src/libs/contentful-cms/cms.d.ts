@@ -40,7 +40,7 @@ export interface Base64Url {
 export interface CMSClient {
     client: Record<string, any>
 
-    public fetchData(): Promise<any[]>
+    fetchData(): Promise<any[]>
 
-    public generateBase64Image(id: string, url: string): Promise<Base64Url | null>
+    generateBase64Image(id: string, url: string): Promise<Base64Url | null>
 }

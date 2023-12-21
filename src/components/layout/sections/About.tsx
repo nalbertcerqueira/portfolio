@@ -78,9 +78,9 @@ export default function About() {
                                 <br />
                                 <p className="about__text">
                                     Atualmente possuo experiência em tecnologias como: React, Next.js, SASS,
-                                    TypeScript, JavaScript, TailwindCSS, APIs Rest, Node.js dentre outras.
-                                    Como desenvolvedor, venho me dedicando na construção de interfaces e
-                                    aplicações web com foco em responsividade, otimizações de SEO,
+                                    TypeScript, JavaScript, TailwindCSS, APIs Rest, Mongodb, Node.js dentre
+                                    outras. Como desenvolvedor, venho me dedicando na construção de interfaces
+                                    e aplicações web com foco em responsividade, otimizações de SEO,
                                     acessibilidade e performance. Nas próximas sessões você encontrará alguns
                                     projetos desenvolvidos por mim e as principais tecnologias que utilizo.
                                 </p>
