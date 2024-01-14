@@ -2,7 +2,7 @@ import { ReactNode, createContext, useEffect } from "react"
 import useLocalStorage from "../hooks/useLocalStorage"
 
 interface ThemeContext {
-    theme: string
+    theme: "light" | "dark"
     toggleTheme: () => void
 }
 
@@ -13,7 +13,7 @@ interface ProviderProps {
 export const ThemeContext = createContext<ThemeContext>({} as ThemeContext)
 
 export default function ThemeProvider({ children }: ProviderProps) {
-    const [theme, setTheme] = useLocalStorage<string>("light", "theme")
+    const [theme, setTheme] = useLocalStorage<"light" | "dark">("light", "theme")
 
     useEffect(toggleDocumentClassName, [theme])
 

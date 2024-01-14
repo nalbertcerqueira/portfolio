@@ -49,6 +49,7 @@ export default function Header() {
 
     return (
         <motion.header
+            style={{ backgroundColor: theme === "dark" ? "#131313cc" : undefined }}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             variants={headerVariants.container}

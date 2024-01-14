@@ -1,6 +1,5 @@
 @use "../1-bases/variables" as vars;
 @use "../1-bases/mixins" as mixins;
-@use "sass:color";
 
 //Reescrevendo os estilos da página para o modo dark.
 html.dark-mode {
@@ -21,7 +20,7 @@ html.dark-mode {
 
     //Header da página.
     .header {
-        background-color: rgba(vars.$default-dark, 0.8);
+        // background-color: rgba(vars.$default-dark, 0.8);
 
         &--shaded {
             box-shadow: 0 1px 0.5rem rgba(vars.$black, 0.75);
@@ -207,7 +206,8 @@ html.dark-mode {
     //Card de projeto.
     .project {
         &__skew {
-            box-shadow: 0.5rem 0.5rem 0 0.125rem darken(vars.$primary-color, 10%),
+            box-shadow:
+                0.5rem 0.5rem 0 0.125rem darken(vars.$primary-color, 10%),
                 0 0 0 0.125rem darken(vars.$primary-color, 10%);
 
             &::after {
