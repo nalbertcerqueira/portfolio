@@ -22,9 +22,9 @@
         position: relative;
 
         &:hover::after {
-            left: 135%;
+            left: 150%;
             opacity: 1;
-            transition: left 1.125s ease-in-out;
+            transition: left 1.25s ease-in-out;
         }
 
         &::after {
