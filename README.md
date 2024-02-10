@@ -25,19 +25,13 @@ O portfólio foi desenvolvido principalmente com Next.js e Typescript, e faz uso
 4. Inicie a aplicação com npm run dev;
 5. Navegue até http://localhost:3000/ para visualizar o projeto.
 
-## 💻 Tecnologias utilizadas
-
-**🚀 Stack do projeto**
-
+## 🚀 Tecnologias utilizadas
 -   HTML
 -   CSS
 -   JavaScript
 -   Typescript
 -   NextJS
 -   SASS
-
-**📚 Outras libs**
-
 -   React icons
 -   Framer motion
 -   Contentful CMS
