@@ -9,7 +9,7 @@
     }
 
     &__skew {
-        @include mixins.flex($gap: 1.5rem, $justify: flex-start, $items: stretch, $direction: column);
+        @include mixins.flex($gap: 1.5rem, $justify: space-between, $items: stretch, $direction: column);            
         height: 100%;
         border-radius: 0.75rem;
         padding: 1.5rem;
@@ -43,7 +43,8 @@
     }
 
     &__link-banner {
-        flex-shrink: 0;
+        max-height: 268px;
+        height: calc(10vw + 120px);
         border-radius: 0.5rem;
         overflow: hidden;
         border: 1px solid rgba(vars.$middle-dark, 0.6);
@@ -53,12 +54,18 @@
         &:focus-visible .project__banner-img {
             transform: scale(1.1);
         }
+
+        @include mixins.media-920{
+            flex-shrink: 0;
+            max-height: none;
+            height: auto;
+        }
     }
 
     &__banner-img {
         width: 100%;
         height: 100%;
-        object-position: top left;
+        object-position: top center;
         object-fit: cover;
         transform-origin: center top;
         transition: transform vars.$transition-time;
@@ -66,7 +73,6 @@
 
     &__content {
         @include mixins.flex($direction: column, $gap: 0.25rem, $items: flex-start);
-        height: 100%;
     }
 
     &__link-title {
@@ -117,7 +123,7 @@
 
     &__external-links {
         @include mixins.flex($gap: 1rem, $justify: flex-start);
-        margin-top: auto;
+        // margin-top: auto;
     }
 
     &__ext-link {

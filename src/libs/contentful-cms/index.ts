@@ -55,17 +55,19 @@ class ContentfulCMSClient implements CMSClient {
 
     public async getFormattedProjectList(entries: CMS.ProjectEntryCollection): Promise<Project[]> {
         const base64UrlMap = await this.generateBase64UrlMap(entries)
-        const projectList: Project[] = entries.items.map((item) => ({
-            id: item.sys.id,
-            ...item.fields,
-            banner: {
-                url: item.fields.banner?.fields.file?.url as string,
-                base64Url: base64UrlMap[item.sys.id],
-                alt: item.fields.banner?.fields.description as string,
-                width: item.fields.banner?.fields.file?.details.image?.width as number,
-                height: item.fields.banner?.fields.file?.details.image?.height as number
-            }
-        }))
+        const projectList: Project[] = entries.items
+            .map((item) => ({
+                id: item.sys.id,
+                ...item.fields,
+                banner: {
+                    url: item.fields.banner?.fields.file?.url as string,
+                    base64Url: base64UrlMap[item.sys.id],
+                    alt: item.fields.banner?.fields.description as string,
+                    width: item.fields.banner?.fields.file?.details.image?.width as number,
+                    height: item.fields.banner?.fields.file?.details.image?.height as number
+                }
+            }))
+            .reverse()
 
         return projectList
     }
