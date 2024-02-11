@@ -41,6 +41,4 @@ export interface CMSClient {
     client: Record<string, any>
 
     fetchData(): Promise<any[]>
-
-    generateBase64Image(id: string, url: string): Promise<Base64Url | null>
 }

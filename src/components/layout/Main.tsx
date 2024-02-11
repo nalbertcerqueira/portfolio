@@ -7,12 +7,11 @@ interface MainProps {
 
 export default function Main({ children }: MainProps) {
     const { isOpen } = useContext(MobileMenuContext)
-    const overlayClassName: string = `overlay ${isOpen ? "overlay--open" : ""}`.trim()
 
     return (
         <main>
             <>{children}</>
-            <div className={overlayClassName} />
+            <div className={`overlay ${isOpen ? "overlay--open" : ""}`.trim()} />
         </main>
     )
 }

@@ -7,7 +7,7 @@ import ExpressIcon from "./icons/ExpressIcon"
 import GithubBigIcon from "./icons/GithubBigIcon"
 import GitIcon from "./icons/GitIcon"
 import HtmlIcon from "./icons/HtmlIcon"
-import JavaScriptIcon from "./icons/JavascriptIcon"
+import JavascriptIcon from "./icons/JavascriptIcon"
 import NextIcon from "./icons/NextIcon"
 import NodejsIcon from "./icons/NodejsIcon"
 import ReactIcon from "./icons/ReactIcon"
@@ -42,7 +42,7 @@ const icons: IconsMap = {
         { id: "css", icon: CssIcon }
     ],
     secondSection: [
-        { id: "js", icon: JavaScriptIcon },
+        { id: "js", icon: JavascriptIcon },
         { id: "express", icon: ExpressIcon },
         { id: "mongodb", icon: MongodbIcon },
         { id: "tailwind", icon: TailwindIcon },

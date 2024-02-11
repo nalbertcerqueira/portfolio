@@ -55,9 +55,13 @@
     font-size: 1rem;
     border-radius: 0.25rem;
     background-color: transparent;
-    transition: fill vars.$transition-time, box-shadow vars.$transition-time,
-        background-color vars.$transition-time, color vars.$transition-time,
-        stroke vars.$transition-time, border-color vars.$transition-time;
+    transition:
+        fill vars.$transition-time,
+        box-shadow vars.$transition-time,
+        background-color vars.$transition-time,
+        color vars.$transition-time,
+        stroke vars.$transition-time,
+        border-color vars.$transition-time;
 
     &--download {
         @include expand-btn-effect {
@@ -176,9 +180,12 @@
         border-radius: 50%;
         transform: translateY(calc(100% + 2.5rem));
         opacity: 75%;
-        transition: background-color vars.$transition-time,
-            border-color vars.$transition-time, box-shadow vars.$transition-time,
-            opacity vars.$transition-time, transform 0.5s;
+        transition:
+            background-color vars.$transition-time,
+            border-color vars.$transition-time,
+            box-shadow vars.$transition-time,
+            opacity vars.$transition-time,
+            transform 0.5s;
 
         &:hover {
             opacity: 100%;

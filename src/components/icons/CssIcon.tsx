@@ -1,4 +1,4 @@
-export default function CssIcon({ className }: { className: string }) {
+export default function CssIcon({ className }: { className?: string }) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -6,7 +6,7 @@ export default function CssIcon({ className }: { className: string }) {
             height={100}
             fill="none"
             viewBox="0 0 124 141.53"
-            className={className || undefined}
+            className={className}
             aria-hidden="true"
             focusable="false"
         >

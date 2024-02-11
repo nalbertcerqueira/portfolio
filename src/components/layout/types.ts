@@ -1,4 +1,4 @@
-import { HTMLAttributeAnchorTarget } from "react"
+import { HTMLAttributeAnchorTarget, CSSProperties } from "react"
 import { IconType } from "react-icons/lib"
 
 export interface SocialLink {

@@ -1,16 +1,15 @@
-import { motion } from "framer-motion"
-import Link from "next/link"
-import { useContext } from "react"
-
-import useCustomInView from "@/hooks/useCustomInView"
-import { headerVariants } from "@/libs/framer-motion"
 import { MobileMenuContext } from "../../contexts/MobileMenuContext"
+import { headerVariants } from "@/libs/framer-motion"
 import { ThemeContext } from "../../contexts/ThemeContext"
 import useLogoAnimation from "../../hooks/useLogoAnimation"
+import useCustomInView from "@/hooks/useCustomInView"
 import useScrollHeader from "../../hooks/useScrollHeader"
 import CloseMenuButton from "../buttons/CloseMenuButton"
 import OpenMenuButton from "../buttons/OpenMenuButton"
 import ThemeButton from "../buttons/ThemeButton"
+import { useContext } from "react"
+import { motion } from "framer-motion"
+import Link from "next/link"
 
 interface SectionLink {
     id: number
@@ -30,8 +29,8 @@ const sectionLinks: SectionLink[] = [
 ]
 
 export default function Header() {
-    const { theme, toggleTheme } = useContext(ThemeContext)
-    const { isOpen, setIsOpen } = useContext(MobileMenuContext)
+    const { theme } = useContext(ThemeContext)
+    const { isOpen } = useContext(MobileMenuContext)
 
     const { isHidden, isScrollOnTop } = useScrollHeader()
     const { isInView, ref: headerRef } = useCustomInView({ once: true })
@@ -57,7 +56,7 @@ export default function Header() {
             className={classNames.header.join(" ").trim()}
         >
             <div className={classNames.innerContainer.join(" ").trim()}>
-                <OpenMenuButton handleClick={() => setIsOpen(true)} ariaLabel="Exibir menu de navegação" />
+                <OpenMenuButton />
                 <Link
                     className="header__home"
                     aria-label="início"
@@ -70,10 +69,7 @@ export default function Header() {
                 </Link>
                 <div className={classNames.navBox.join(" ").trim()}>
                     <nav className={classNames.navbar.join(" ").trim()}>
-                        <CloseMenuButton
-                            ariaLabel="Ocultar menu de navegação"
-                            handleClick={() => setIsOpen(false)}
-                        />
+                        <CloseMenuButton />
                         <ul className="navbar__list header__nav-list">
                             {sectionLinks.map((link, i) => (
                                 <motion.li
@@ -90,7 +86,7 @@ export default function Header() {
                         </ul>
                     </nav>
                 </div>
-                <ThemeButton theme={theme} changeTheme={toggleTheme} />
+                <ThemeButton />
             </div>
         </motion.header>
     )

@@ -1,15 +1,14 @@
 import { BsMoonStarsFill, FiSun } from "@/libs/react-icons"
+import { ThemeContext } from "@/contexts/ThemeContext"
+import { useContext } from "react"
 
-interface ThemeButtonProps {
-    theme: string
-    changeTheme: () => void
-}
+//Botão para alterar o tema da página entre 'light' e 'dark'.
+export default function ThemeButton() {
+    const { theme, toggleTheme } = useContext(ThemeContext)
 
-//Bottão para alterar o tema da página.
-export default function ThemeButton({ theme, changeTheme }: ThemeButtonProps) {
     return (
         <button
-            onClick={changeTheme}
+            onClick={toggleTheme}
             className={`btn btn--theme btn--theme--${theme}`}
             aria-label="Alterar o tema da página"
             type="button"

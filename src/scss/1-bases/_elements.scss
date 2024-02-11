@@ -58,6 +58,10 @@ button {
     border: none;
     display: block;
 
+    & * {
+        pointer-events: none;
+    }
+
     &:focus-visible {
         outline-style: dashed;
     }

@@ -3,7 +3,7 @@ interface MarkerHeadingProps {
     markerClassName: string
 }
 
-//Componente sub-título utilizado About.jsx e Skills.jsx.
+//Marcador utilizado em About.jsx e Skills.jsx.
 export default function MarkerHeading({ title, markerClassName }: MarkerHeadingProps) {
     return (
         <div className="title-marker">

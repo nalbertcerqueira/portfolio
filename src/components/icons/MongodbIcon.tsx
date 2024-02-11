@@ -5,7 +5,7 @@ export default function MongodbIcon({ className }: { className?: string }) {
             width={100}
             height={100}
             viewBox="6.738 -3.43622834 17.45992422 39.40619484"
-            className={className || undefined}
+            className={className}
             aria-hidden="true"
             focusable="false"
         >

@@ -1,12 +1,17 @@
-interface OpenButtonProps {
-    ariaLabel: string
-    handleClick: () => void
-}
+import { MobileMenuContext } from "@/contexts/MobileMenuContext"
+import { useContext } from "react"
 
 //Botão para abrir o menu no layout mobile.
-export default function OpenMenuButton({ handleClick, ariaLabel }: OpenButtonProps) {
+export default function OpenMenuButton() {
+    const { setIsOpen } = useContext(MobileMenuContext)
+
     return (
-        <button onClick={handleClick} aria-label={ariaLabel} className="btn btn--hamburger" type="button">
+        <button
+            onClick={() => setIsOpen(true)}
+            aria-label="Exibir menu de navegação"
+            className="btn btn--hamburger"
+            type="button"
+        >
             <div className="btn--hamburger__bars">
                 <span className="btn--hamburger__bar" />
                 <span className="btn--hamburger__bar" />

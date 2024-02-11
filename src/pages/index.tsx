@@ -1,6 +1,6 @@
 import { Project, SkillsMap } from "@/types/general"
 import { GetStaticPropsResult } from "next"
-import { contentfulCMS as cms } from "../libs/contentful-cms"
+import { contentfulClient, ContentfulCMSClient } from "../libs/contentful-cms"
 
 import PageHead from "@/components/PageHead"
 import ScrollToTopButton from "@/components/buttons/ScrollToTopButton"
@@ -19,10 +19,10 @@ interface HomeProps {
 
 //Buscando as informações dos projetos e habilidades na contenful CMS.
 export async function getStaticProps(): Promise<GetStaticPropsResult<HomeProps>> {
-    const [projectEntries, skillEntries] = await cms.fetchData()
+    const [projectEntries, skillEntries] = await contentfulClient.fetchData()
 
-    const skillsMap = cms.generateSkillsMap(skillEntries)
-    const projectList = await cms.getFormattedProjectList(projectEntries)
+    const skillsMap = ContentfulCMSClient.generateSkillsMap(skillEntries)
+    const projectList = await ContentfulCMSClient.getFormattedProjectList(projectEntries)
 
     return {
         props: {
