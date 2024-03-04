@@ -1,3 +1,5 @@
+"use client"
+
 import { BsMoonStarsFill, FiSun } from "@/libs/react-icons"
 import { ThemeContext } from "@/contexts/ThemeContext"
 import { useContext } from "react"

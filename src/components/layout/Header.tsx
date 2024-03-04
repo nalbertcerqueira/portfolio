@@ -1,15 +1,18 @@
-import { MobileMenuContext } from "../../contexts/MobileMenuContext"
-import { headerVariants } from "@/libs/framer-motion"
-import { ThemeContext } from "../../contexts/ThemeContext"
-import useLogoAnimation from "../../hooks/useLogoAnimation"
-import useCustomInView from "@/hooks/useCustomInView"
-import useScrollHeader from "../../hooks/useScrollHeader"
-import CloseMenuButton from "../buttons/CloseMenuButton"
-import OpenMenuButton from "../buttons/OpenMenuButton"
-import ThemeButton from "../buttons/ThemeButton"
-import { useContext } from "react"
-import { motion } from "framer-motion"
+"use client"
+
 import Link from "next/link"
+import { motion } from "framer-motion"
+import { useContext } from "react"
+import { headerVariants } from "@/libs/framer-motion"
+
+import Logo from "../Logo"
+import ThemeButton from "../buttons/ThemeButton"
+import OpenMenuButton from "../buttons/OpenMenuButton"
+import useScrollHeader from "../../hooks/useScrollHeader"
+import MotionContainer from "./MotionContainer"
+import CloseMenuButton from "../buttons/CloseMenuButton"
+import { ThemeContext } from "../../contexts/ThemeContext"
+import { MobileMenuContext } from "../../contexts/MobileMenuContext"
 
 interface SectionLink {
     id: number
@@ -17,7 +20,7 @@ interface SectionLink {
     content: string
 }
 
-interface ClassNamesMap {
+interface ClassNameMap {
     [key: string]: string[]
 }
 
@@ -31,12 +34,9 @@ const sectionLinks: SectionLink[] = [
 export default function Header() {
     const { theme } = useContext(ThemeContext)
     const { isOpen } = useContext(MobileMenuContext)
-
     const { isHidden, isScrollOnTop } = useScrollHeader()
-    const { isInView, ref: headerRef } = useCustomInView({ once: true })
-    const { colorIndex, colorsList, animationOFF, animationON } = useLogoAnimation(400)
 
-    const classNames: ClassNamesMap = {
+    const classNames: ClassNameMap = {
         navbar: ["navbar header__navbar", `${isOpen ? "header__navbar--open" : ""}`],
         navBox: ["header__nav-box", `${isOpen ? "header__nav-box--open" : ""}`],
         innerContainer: [
@@ -46,48 +46,45 @@ export default function Header() {
         header: ["header", `${isScrollOnTop ? "" : "header--shaded"}`, `${isHidden ? "header--hidden" : ""}`]
     }
 
+    function renderNavLinks() {
+        return sectionLinks.map((link, i) => (
+            <motion.li
+                key={link.id}
+                className="navbar__list-item"
+                custom={i}
+                variants={headerVariants.navItems}
+            >
+                <Link className="navbar__link" href={link.href}>
+                    {link.content}
+                </Link>
+            </motion.li>
+        ))
+    }
+
     return (
-        <motion.header
-            style={{ backgroundColor: theme === "dark" ? "#131313cc" : undefined }}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            variants={headerVariants.container}
-            ref={headerRef}
-            className={classNames.header.join(" ").trim()}
+        <MotionContainer
+            once={true}
+            elementType="header"
+            elementProps={{
+                initial: "hidden",
+                className: classNames.header.join(" ").trim(),
+                variants: headerVariants.container,
+                style: { backgroundColor: theme === "dark" ? "#131313cc" : undefined }
+            }}
         >
             <div className={classNames.innerContainer.join(" ").trim()}>
                 <OpenMenuButton />
-                <Link
-                    className="header__home"
-                    aria-label="início"
-                    href="/"
-                    onMouseEnter={animationON}
-                    onMouseLeave={animationOFF}
-                    style={{ backgroundColor: colorsList[colorIndex] }}
-                >
-                    NC
+                <Link aria-label="início" href="/">
+                    <Logo />
                 </Link>
                 <div className={classNames.navBox.join(" ").trim()}>
                     <nav className={classNames.navbar.join(" ").trim()}>
                         <CloseMenuButton />
-                        <ul className="navbar__list header__nav-list">
-                            {sectionLinks.map((link, i) => (
-                                <motion.li
-                                    key={link.id}
-                                    className="navbar__list-item"
-                                    custom={i}
-                                    variants={headerVariants.navItems}
-                                >
-                                    <a className="navbar__link" href={link.href}>
-                                        {link.content}
-                                    </a>
-                                </motion.li>
-                            ))}
-                        </ul>
+                        <ul className="navbar__list header__nav-list">{renderNavLinks()}</ul>
                     </nav>
                 </div>
                 <ThemeButton />
             </div>
-        </motion.header>
+        </MotionContainer>
     )
 }

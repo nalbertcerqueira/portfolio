@@ -1,4 +1,4 @@
-import { EntryCollection, EntryFieldTypes } from "contentful"
+import { ChainModifiers, EntryCollection, EntryFieldTypes, ContentfulClientApi } from "contentful"
 
 export namespace CMS {
     export interface ProjectSkeleton {
@@ -27,9 +27,7 @@ export namespace CMS {
 
     export type ProjectEntryCollection = EntryCollection<ProjectSkeleton, CustomModifiers>
 
-    export type SkillEntryColection = EntryCollection<SkillSkeleton, CustomModifiers>
-
-    export type EntryCollectionList = [ProjectEntryCollection, SkillEntryColection]
+    export type SkillEntryCollection = EntryCollection<SkillSkeleton, CustomModifiers>
 }
 
 export interface Base64Url {
@@ -37,8 +35,6 @@ export interface Base64Url {
     url: string
 }
 
-export interface CMSClient {
-    client: Record<string, any>
-
-    fetchData(): Promise<any[]>
+export interface CMSClient<Modifier extends ChainModifiers> {
+    client: ContentfulClientApi<Modifier>
 }

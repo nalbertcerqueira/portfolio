@@ -26,10 +26,6 @@ html.dark-mode {
             box-shadow: 0 1px 0.5rem rgba(vars.$black, 0.75);
         }
 
-        &__home {
-            box-shadow: 0 0 0 0.125rem vars.$white;
-        }
-
         &__navbar {
             @include mixins.media-920 {
                 background-color: vars.$primary-color;
@@ -128,6 +124,10 @@ html.dark-mode {
                 background: linear-gradient(to right, transparent, vars.$primary-color);
             }
         }
+    }
+
+    .brand {
+        box-shadow: 0 0 0 0.125rem vars.$white;
     }
 
     //Botões.

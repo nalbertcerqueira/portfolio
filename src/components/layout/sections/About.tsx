@@ -1,12 +1,14 @@
-import { motion } from "framer-motion"
+"use client"
+
 import Image from "next/image"
+import { motion } from "framer-motion"
+import { aboutVariants } from "@/libs/framer-motion"
 
 import Link from "@/components/Link"
-import useCustomInView from "@/hooks/useCustomInView"
-import { aboutVariants } from "@/libs/framer-motion"
-import profilePicture from "../../../../public/imgs/social.png"
 import { SocialLink } from "../types"
+import profilePicture from "../../../../public/imgs/social.png"
 import MarkerHeading from "./MarkerHeading"
+import MotionContainer from "../MotionContainer"
 
 import { SiGmail, SlSocialGithub, SlSocialInstagram, SlSocialLinkedin } from "@/libs/react-icons"
 
@@ -39,16 +41,17 @@ const linksList: SocialLink[] = [
 ]
 
 export default function About() {
-    const { isInView, ref: aboutRef } = useCustomInView({ amount: 0.25, once: true })
-
     return (
-        <motion.section
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            variants={aboutVariants.container}
-            ref={aboutRef}
-            id="about"
-            className="about"
+        <MotionContainer
+            amount={0.25}
+            once={true}
+            elementType="section"
+            elementProps={{
+                id: "about",
+                className: "about",
+                initial: "hidden",
+                variants: aboutVariants.container
+            }}
         >
             <div className="about__inner-container">
                 <div className="about__title-box">
@@ -109,6 +112,6 @@ export default function About() {
                     </div>
                 </motion.div>
             </div>
-        </motion.section>
+        </MotionContainer>
     )
 }

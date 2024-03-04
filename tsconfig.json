@@ -16,13 +16,15 @@
         "incremental": true,
         "paths": {
             "@/*": ["./src/*"]
-        }
+        },
+        "plugins": [{ "name": "next" }]
     },
     "include": [
         "next-env.d.ts",
         "**/*.ts",
         "**/*.tsx",
-        "src/components/layout/sections/Hero.jsx"
+        "src/components/layout/sections/Hero.jsx",
+        ".next/types/**/*.ts"
     ],
     "exclude": ["node_modules"]
 }

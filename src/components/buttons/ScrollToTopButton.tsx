@@ -1,3 +1,5 @@
+"use client"
+
 import useIntersectionObserver from "@/hooks/useIntersectionObserver"
 import { MdKeyboardDoubleArrowUp } from "@/libs/react-icons"
 import { useCallback, useState } from "react"

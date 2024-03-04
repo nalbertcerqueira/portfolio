@@ -1,3 +1,5 @@
+"use client"
+
 import { Dispatch, ReactNode, SetStateAction, createContext, useEffect, useState } from "react"
 
 interface MobileMenuContext {

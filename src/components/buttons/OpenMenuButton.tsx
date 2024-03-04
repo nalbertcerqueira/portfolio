@@ -1,7 +1,7 @@
 import { MobileMenuContext } from "@/contexts/MobileMenuContext"
 import { useContext } from "react"
 
-//Botão para abrir o menu no layout mobile.
+//Botão para abrir o menu em dispositivos móveis.
 export default function OpenMenuButton() {
     const { setIsOpen } = useContext(MobileMenuContext)
 

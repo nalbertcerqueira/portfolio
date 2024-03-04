@@ -1,17 +1,11 @@
-import { ReactNode, useContext } from "react"
-import { MobileMenuContext } from "../../contexts/MobileMenuContext"
+import { PropsWithChildren } from "react"
+import Overlay from "./Overlay"
 
-interface MainProps {
-    children: ReactNode
-}
-
-export default function Main({ children }: MainProps) {
-    const { isOpen } = useContext(MobileMenuContext)
-
+export default function Main({ children }: PropsWithChildren) {
     return (
         <main>
             <>{children}</>
-            <div className={`overlay ${isOpen ? "overlay--open" : ""}`.trim()} />
+            <Overlay />
         </main>
     )
 }

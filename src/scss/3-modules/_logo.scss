@@ -1,0 +1,16 @@
+@use "../1-bases/variables" as vars;
+@use "../1-bases/mixins" as mixins;
+
+.brand {
+    @include mixins.flex;
+    flex-shrink: 0;
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 50%;
+    color: vars.$white;
+    font-weight: 600;
+    font-size: 1.25rem;
+    transition:
+        background-color vars.$transition-time,
+        box-shadow vars.$transition-time;
+}

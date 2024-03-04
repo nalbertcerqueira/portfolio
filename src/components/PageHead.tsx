@@ -1,8 +1,6 @@
-import Head from "next/head"
-
 export default function PageHead() {
     return (
-        <Head>
+        <>
             <meta charSet="UTF-8" />
             <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
@@ -35,6 +33,11 @@ export default function PageHead() {
             <link rel="apple-touch-icon" type="image/svg+xml" href="/icon.svg" />
             <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
             <link rel="canonical" href="https://nalbertdev.com/" />
-        </Head>
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link
+                href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap"
+                rel="stylesheet"
+            />
+        </>
     )
 }

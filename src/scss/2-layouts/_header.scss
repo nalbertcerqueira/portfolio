@@ -38,20 +38,6 @@
         padding: 0.5rem 0;
     }
 
-    &__home {
-        @include mixins.flex;
-        flex-shrink: 0;
-        height: 3.5rem;
-        width: 3.5rem;
-        border-radius: 50%;
-        color: vars.$white;
-        font-weight: 600;
-        font-size: 1.25rem;
-        transition:
-            background-color vars.$transition-time,
-            box-shadow vars.$transition-time;
-    }
-
     &__nav-box {
         @include mixins.media-920 {
             @include mixins.absolute-position;

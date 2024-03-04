@@ -1,13 +1,13 @@
+import { getPlaiceholder } from "plaiceholder"
+import { AssetFields, AssetsQueries, ContentfulClientApi, CreateClientParams, createClient } from "contentful"
+
 import { Project, SkillsMap } from "@/types/general"
 import { Base64Url, CMS, CMSClient } from "./cms"
 
-import { ContentfulClientApi, CreateClientParams, createClient } from "contentful"
-import { getPlaiceholder } from "plaiceholder"
-
-export class ContentfulCMSClient implements CMSClient {
+export class ContentfulCMSClient implements CMSClient<CMS.CustomModifiers> {
     public client: ContentfulClientApi<CMS.CustomModifiers>
 
-    public static generateSkillsMap(entries: CMS.SkillEntryColection): SkillsMap {
+    public static generateSkillsMap(entries: CMS.SkillEntryCollection): SkillsMap {
         const skillsMap = entries.items.reduce((acc, item) => {
             const key = item.fields.slug
             acc[key] = {
@@ -54,10 +54,10 @@ export class ContentfulCMSClient implements CMSClient {
             })
     }
 
-    private static async generateBase64UrlMap(entires: CMS.ProjectEntryCollection) {
-        const base64UrlPromises = entires.items.map((item) => {
+    private static async generateBase64UrlMap(entries: CMS.ProjectEntryCollection) {
+        const base64UrlPromises = entries.items.map((item) => {
             const id = item.sys.id
-            const url = "https:" + item.fields.banner?.fields.file?.url
+            const url = `https:${item.fields.banner?.fields.file?.url}`
             return this.generateBase64Image(id, url)
         })
 
@@ -72,21 +72,33 @@ export class ContentfulCMSClient implements CMSClient {
         this.client = createClient(cmsParams).withoutUnresolvableLinks
     }
 
-    public async fetchData(): Promise<CMS.EntryCollectionList> {
-        return await Promise.all([
-            this.client.getEntries<CMS.ProjectSkeleton>({
-                content_type: "portfolioProject",
-                order: ["fields.slug"]
-            }),
-            this.client.getEntries<CMS.SkillSkeleton>({
-                content_type: "portfolioSkill"
-            })
-        ])
+    public async fetchSkills(): Promise<CMS.SkillEntryCollection> {
+        return this.client.getEntries<CMS.SkillSkeleton>({
+            content_type: "portfolioSkill"
+        })
+    }
+
+    public async fetchProjects(): Promise<CMS.ProjectEntryCollection> {
+        return this.client.getEntries<CMS.ProjectSkeleton>({
+            content_type: "portfolioProject",
+            order: ["fields.slug"]
+        })
+    }
+
+    public async getAssetUrl(query: AssetsQueries<AssetFields, CMS.CustomModifiers>): Promise<string | null> {
+        const queryResult = await this.client.getAssets(query)
+        const assetUrl = queryResult.items[0].fields.file?.url
+
+        if (!assetUrl) {
+            return null
+        }
+
+        return `https:${queryResult.items[0].fields.file?.url}`
     }
 }
 
 export const contentfulClient = new ContentfulCMSClient({
     space: process.env.CMS_SPACE_ID as string,
-    environment: process.env.CMS_ENVIROMENT_NAME as string,
+    environment: process.env.CMS_ENVIRONMENT_NAME as string,
     accessToken: process.env.CMS_ACCESS_TOKEN as string
 })

@@ -1,18 +1,18 @@
 import { HTMLAttributeAnchorTarget, ReactNode } from "react"
 
 interface LinkProps {
-    className: string
-    ariaLabel?: string
     href: string
-    target?: HTMLAttributeAnchorTarget
     children: ReactNode
+    target?: HTMLAttributeAnchorTarget
+    className?: string
+    ariaLabel?: string
 }
 
 export default function Link(props: LinkProps) {
     return (
         <a
-            className={props.className || undefined}
-            aria-label={props.ariaLabel || undefined}
+            className={props.className}
+            aria-label={props.ariaLabel}
             href={props.href}
             rel="noreferrer"
             target={props.target || "_blank"}

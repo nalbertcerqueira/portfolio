@@ -1,12 +1,13 @@
-import { motion } from "framer-motion"
+"use client"
+
 import Image from "next/image"
 import { ReactNode } from "react"
-
-import { ProjectBanner } from "@/types/general"
-import useCustomInView from "../hooks/useCustomInView"
 import { projectsVariants } from "../libs/framer-motion"
 import { SlSocialGithub, VscLinkExternal } from "../libs/react-icons"
+
 import Link from "./Link"
+import { ProjectBanner } from "@/types/general"
+import MotionContainer from "./layout/MotionContainer"
 
 interface ProjectCardProps {
     name: string
@@ -21,8 +22,6 @@ interface ProjectCardProps {
 
 //Card de projeto utilizado em Projects.jsx.
 export default function ProjectCard(props: ProjectCardProps) {
-    const { isInView, ref: projectRef } = useCustomInView<HTMLDivElement>({ once: true })
-
     function renderTechItems(techList: string[]) {
         return techList.map((tech, i) => (
             <li key={i} className="project__tech-item">
@@ -32,13 +31,15 @@ export default function ProjectCard(props: ProjectCardProps) {
     }
 
     return (
-        <motion.div
-            custom={props.index % 2}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            variants={projectsVariants.projectCard}
-            ref={projectRef}
-            className={`project ${props.isVisible ? "project--visible" : ""}`.trim()}
+        <MotionContainer
+            once={true}
+            elementType="div"
+            elementProps={{
+                initial: "hidden",
+                className: `project ${props.isVisible ? "project--visible" : ""}`.trim(),
+                custom: props.index % 2,
+                variants: projectsVariants.projectCard
+            }}
         >
             <div className="project__skew">
                 <Link
@@ -92,6 +93,6 @@ export default function ProjectCard(props: ProjectCardProps) {
                     </div>
                 </div>
             </div>
-        </motion.div>
+        </MotionContainer>
     )
 }

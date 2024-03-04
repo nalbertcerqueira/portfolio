@@ -1,8 +1,10 @@
+"use client"
+
 import { MobileMenuContext } from "@/contexts/MobileMenuContext"
 import { VscClose } from "@/libs/react-icons"
 import { useContext } from "react"
 
-//Botão para fechar o menu no layout mobile.
+//Botão para fechar o menu em dispositivos móveis.
 export default function CloseMenuButton() {
     const { setIsOpen } = useContext(MobileMenuContext)
 

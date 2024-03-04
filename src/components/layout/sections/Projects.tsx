@@ -1,11 +1,13 @@
-import { motion } from "framer-motion"
+"use client"
 
-import ProjectCard from "@/components/ProjectCard"
-import useCustomInView from "@/hooks/useCustomInView"
-import useToggleProjects from "@/hooks/useToggleProjects"
+import { motion } from "framer-motion"
 import { projectsVariants } from "@/libs/framer-motion"
 import { MdOutlineKeyboardArrowDown } from "@/libs/react-icons"
+
 import { Project } from "@/types/general"
+import ProjectCard from "@/components/ProjectCard"
+import MotionContainer from "../MotionContainer"
+import useToggleProjects from "@/hooks/useToggleProjects"
 
 interface ProjectsProps {
     projectList: Project[]
@@ -13,7 +15,6 @@ interface ProjectsProps {
 
 export default function Projects(props: ProjectsProps) {
     const { moreProjects, toggleMoreProjects } = useToggleProjects()
-    const { isInView, ref: projectsRef } = useCustomInView({ once: true, amount: 0.1 })
 
     const buttonIconClassName: string[] = [
         "btn--show-more__icon",
@@ -39,13 +40,16 @@ export default function Projects(props: ProjectsProps) {
     }
 
     return (
-        <motion.section
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            variants={projectsVariants.container}
-            ref={projectsRef}
-            id="projects"
-            className="projects"
+        <MotionContainer
+            amount={0.1}
+            once={true}
+            elementType="section"
+            elementProps={{
+                id: "projects",
+                className: "projects",
+                initial: "hidden",
+                variants: projectsVariants.container
+            }}
         >
             <div className="projects__inner-container">
                 <div className="projects__title-box">
@@ -74,6 +78,6 @@ export default function Projects(props: ProjectsProps) {
                     </span>
                 </motion.button>
             </div>
-        </motion.section>
+        </MotionContainer>
     )
 }

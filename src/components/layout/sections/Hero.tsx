@@ -1,11 +1,13 @@
-import { motion } from "framer-motion"
+"use client"
+
 import Image from "next/image"
+import { motion } from "framer-motion"
 import { Fragment } from "react"
+import { heroVariants, sideLinkVariants } from "@/libs/framer-motion"
 
 import SideLinks from "@/components/SideLinks"
-import useCustomInView from "@/hooks/useCustomInView"
-import { heroVariants, sideLinkVariants } from "@/libs/framer-motion"
 import profilePicture from "../../../../public/imgs/profile.jpeg"
+import MotionContainer from "../MotionContainer"
 
 interface TitleSpan {
     id: number
@@ -22,9 +24,7 @@ const titleSpans: TitleSpan[] = [
     { id: 6, className: "hero__title hero__title--main", content: "." }
 ]
 
-export default function Hero() {
-    const { isInView, ref: heroRef } = useCustomInView({ once: true })
-
+export default function Hero({ cvURL }: { cvURL: string }) {
     function renderTitleSpans(): JSX.Element[] {
         return titleSpans.map((span) => (
             <Fragment key={span.id}>
@@ -42,13 +42,15 @@ export default function Hero() {
     }
 
     return (
-        <motion.section
-            ref={heroRef}
-            id="home"
-            className="hero"
-            variants={heroVariants.container}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
+        <MotionContainer
+            once={true}
+            elementType="section"
+            elementProps={{
+                id: "home",
+                className: "hero",
+                initial: "hidden",
+                variants: heroVariants.container
+            }}
         >
             <div className="hero__inner-container">
                 <div className="hero__content-wrapper">
@@ -70,7 +72,7 @@ export default function Hero() {
                             target="_blank"
                             role="button"
                             aria-label="Obtenha uma cópia do meu CV"
-                            href="https://assets.ctfassets.net/1esf6nnkgil4/5Wxachw5dbXufCFqnYSxBj/14f9390866de02f5ea53556bb80539e8/CV_-_Nalbert_Cerqueira.pdf"
+                            href={cvURL}
                             className="btn btn--download hero__btn"
                             rel="noreferrer"
                         >
@@ -80,6 +82,6 @@ export default function Hero() {
                     </div>
                 </div>
             </div>
-        </motion.section>
+        </MotionContainer>
     )
 }

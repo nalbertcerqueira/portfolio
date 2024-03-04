@@ -1,12 +1,14 @@
+"use client"
+
 import { motion } from "framer-motion"
+import { BsMouse } from "@/libs/react-icons"
+import { skillsVariants } from "@/libs/framer-motion"
 import { MouseEvent, useState } from "react"
 
 import StackList from "@/components/StackList"
-import useCustomInView from "@/hooks/useCustomInView"
-import { skillsVariants } from "@/libs/framer-motion"
-import { BsMouse } from "@/libs/react-icons"
 import { SkillsMap } from "@/types/general"
 import MarkerHeading from "./MarkerHeading"
+import MotionContainer from "../MotionContainer"
 
 interface SkillsProps {
     skillsMap: SkillsMap
@@ -14,7 +16,6 @@ interface SkillsProps {
 
 export default function Skills({ skillsMap }: SkillsProps) {
     const [currentId, setCurrentId] = useState<string | null>(null)
-    const { isInView, ref: skillsRef } = useCustomInView({ once: true, amount: 0.25 })
 
     function changeCurrentId(event: MouseEvent<HTMLElement>): void {
         const target = event.target as HTMLElement
@@ -54,13 +55,16 @@ export default function Skills({ skillsMap }: SkillsProps) {
     }
 
     return (
-        <motion.section
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            variants={skillsVariants.container}
-            ref={skillsRef}
-            id="skills"
-            className="skills"
+        <MotionContainer
+            amount={0.25}
+            once={true}
+            elementType="section"
+            elementProps={{
+                id: "skills",
+                className: "skills",
+                initial: "hidden",
+                variants: skillsVariants.container
+            }}
         >
             <div className="skills__inner-container">
                 <div className="skills__title-box">
@@ -82,6 +86,6 @@ export default function Skills({ skillsMap }: SkillsProps) {
                     </motion.div>
                 </motion.div>
             </div>
-        </motion.section>
+        </MotionContainer>
     )
 }
