@@ -9,7 +9,7 @@ import Skills from "../components/layout/sections/Skills"
 import Footer from "@/components/layout/Footer"
 import ScrollToTopButton from "@/components/buttons/ScrollToTopButton"
 
-export const revalidate = 60
+export const revalidate = parseInt(process.env.REVALIDATE_TIME || "60")
 
 //Buscando as informações dos projetos e habilidades na contenful CMS.
 async function fetchData() {
