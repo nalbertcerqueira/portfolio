@@ -127,7 +127,7 @@ html.dark-mode {
     }
 
     .brand {
-        box-shadow: 0 0 0 0.125rem vars.$white;
+        border: 0.125rem solid vars.$white;
     }
 
     //Botões.
@@ -240,7 +240,7 @@ html.dark-mode {
 
         &__ext-link:hover,
         &__ext-link:focus-visible {
-            box-shadow: 0 0 0 1px vars.$primary-color;
+            box-shadow: 0 0 0 1px vars.$primary-color inset;
         }
 
         &__ext-icon {

@@ -240,14 +240,12 @@
     }
 
     &__social-wrapper {
-        margin-top: 1.25rem;
         display: grid;
         gap: 2rem;
         grid-template-columns: repeat(4, 3.75rem);
 
         @include mixins.media-640 {
             justify-content: center;
-            margin-top: 1.75rem;
         }
 
         @include mixins.media-430 {
@@ -395,6 +393,7 @@
 
     &__tech-desc {
         color: vars.$text-white;
+        font-weight: 300;
 
         @include mixins.media-640 {
             text-align: center;

@@ -5,7 +5,7 @@
     @include mixins.flex($gap: 1rem);
     position: relative;
     width: fit-content;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
 
     @include mixins.media-640 {
         margin: 0 auto 1.5rem;
