@@ -78,7 +78,6 @@ export default function About() {
                                     está em transição de carreira para o setor de tecnologia como
                                     Desenvolvedor Web Front-end.
                                 </p>
-                                <br />
                                 <p className="about__text">
                                     Atualmente possuo experiência em tecnologias como: React, Next.js, SASS,
                                     TypeScript, JavaScript, TailwindCSS, APIs Rest, Mongodb, Node.js dentre
