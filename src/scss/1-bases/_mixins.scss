@@ -23,11 +23,21 @@
 
 @mixin flex($justify: center, $items: center, $gap: 0rem, $direction: row, $wrap: nowrap) {
     display: flex;
-    justify-content: $justify;
-    align-items: $items;
-    flex-direction: $direction;
-    flex-wrap: $wrap;
-    gap: $gap;
+    @if ($justify != flex-start) {
+        justify-content: $justify;
+    }
+    @if ($items != stretch) {
+        align-items: $items;
+    }
+    @if ($direction != row) {
+        flex-direction: $direction;
+    }
+    @if ($wrap != nowrap) {
+        flex-wrap: $wrap;
+    }
+    @if ($gap != 0) {
+        gap: $gap;
+    }
 }
 
 @mixin absolute-position($left: 0, $top: 0) {
