@@ -7,11 +7,11 @@
 ![Next JS badge](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
 ![SASS badge](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
 
-<img width="850px" src="https://github.com/nalbertcerqueira/nalbertcerqueira/assets/105606295/34560bc0-cdd3-4c03-9e86-58a272f663e3">
+<img width="850px" src="https://github.com/user-attachments/assets/60135c33-4bae-4d64-9dea-c79067ebc535">
 
 ## 📋 Descrição
 
-Este projeto se trata do meu portfólio pessoal como **Desenvolvedor Web Front-end**, nele você poderá encontrar algumas informações sobre mim, bem como alguns projetos realizados e as principais tecnologias que utilizo.
+Este projeto se trata do meu portfólio pessoal como **Desenvolvedor Fullstack**, nele você poderá encontrar algumas informações sobre mim, bem como alguns projetos realizados e as principais tecnologias que utilizo.
 
 O portfólio foi desenvolvido principalmente com Next.js e Typescript, e faz uso de um headless CMS para servir algumas informações utilizadas na página.
 
@@ -26,6 +26,7 @@ O portfólio foi desenvolvido principalmente com Next.js e Typescript, e faz uso
 5. Navegue até http://localhost:3000/ para visualizar o projeto.
 
 ## 🚀 Tecnologias utilizadas
+
 -   HTML
 -   CSS
 -   JavaScript
