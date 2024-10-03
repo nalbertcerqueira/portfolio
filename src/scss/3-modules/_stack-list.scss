@@ -3,7 +3,7 @@
 
 $stack-wrapper-gap: 2rem;
 $stack-item-size: 6.5rem;
-$number-of-skills: 14;
+$number-of-skills: 15;
 
 .stacks {
     overflow: hidden;
@@ -21,10 +21,10 @@ $number-of-skills: 14;
 
     &__sub-list {
         @include mixins.flex($gap: $stack-wrapper-gap, $justify: flex-start);
-        animation: slide-left 27s linear infinite;
+        animation: slide-left 30s linear infinite;
 
         &:last-child {
-            animation: slide-right 27s linear infinite;
+            animation: slide-right 30s linear infinite;
             transform: translateX(-($number-of-skills * ($stack-wrapper-gap + $stack-item-size)));
         }
     }
