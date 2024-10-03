@@ -74,17 +74,15 @@ export default function About() {
                             <article>
                                 <MarkerHeading markerClassName="about__marker" title="Apresentação" />
                                 <p className="about__text">
-                                    Olá ! Meu nome é Nalbert, sou um recém formado em engenharia química que
-                                    está em transição de carreira para o setor de tecnologia como
-                                    Desenvolvedor Web Front-end.
-                                </p>
-                                <p className="about__text">
-                                    Atualmente possuo experiência em tecnologias como: React, Next.js, SASS,
-                                    TypeScript, JavaScript, TailwindCSS, APIs Rest, Mongodb, Node.js dentre
-                                    outras. Como desenvolvedor, venho me dedicando na construção de interfaces
-                                    e aplicações web com foco em responsividade, otimizações de SEO,
-                                    acessibilidade e performance. Nas próximas sessões você encontrará alguns
-                                    projetos desenvolvidos por mim e as principais tecnologias que utilizo.
+                                    Desenvolvedor Fullstack com experiência em tecnologias como: React,
+                                    Next.js, MySQL, TypeScript, TailwindCSS, APIs Rest, Mongodb, Node.js,
+                                    dentre outras. Como desenvolvedor estou sempre buscando por soluções
+                                    práticas e eficientes para criar aplicações web escaláveis e funcionais.
+                                    Atualmente venho me dedicando na construção de aplicações com foco em
+                                    responsividade, otimizações de SEO, acessibilidade e performance.
+                                    <br />
+                                    Nas próximas sessões você encontrará alguns projetos desenvolvidos por mim
+                                    e as principais tecnologias que utilizo.
                                 </p>
                             </article>
                         </motion.div>

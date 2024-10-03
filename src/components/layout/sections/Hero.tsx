@@ -20,7 +20,7 @@ const titleSpans: TitleSpan[] = [
     { id: 2, className: "hero__title hero__title--main", content: "Cerqueira" },
     { id: 3, className: "hero__title hero__title--sub", content: "Desenvolvedor" },
     { id: 4, className: "hero__title hero__title--sub", content: "Web" },
-    { id: 5, className: "hero__title hero__title--sub", content: "Front-end" },
+    { id: 5, className: "hero__title hero__title--sub", content: "Fullstack" },
     { id: 6, className: "hero__title hero__title--main", content: "." }
 ]
 
@@ -60,7 +60,7 @@ export default function Hero({ cvURL }: { cvURL: string }) {
                             placeholder="blur"
                             className="hero__avatar-img"
                             src={profilePicture}
-                            alt="Nalbert cerqueira - desenvolvedor frontend."
+                            alt="Nalbert cerqueira - desenvolvedor fullstack."
                         />
                     </motion.div>
                     <div className="hero__left-content">
