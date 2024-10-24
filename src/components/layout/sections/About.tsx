@@ -74,7 +74,7 @@ export default function About() {
                             <article>
                                 <MarkerHeading markerClassName="about__marker" title="Apresentação" />
                                 <p className="about__text">
-                                    Desenvolvedor Fullstack com experiência em tecnologias como: React,
+                                    Desenvolvedor Full Stack com experiência em tecnologias como: React,
                                     Next.js, MySQL, TypeScript, TailwindCSS, APIs Rest, Mongodb, Node.js,
                                     dentre outras. Como desenvolvedor estou sempre buscando por soluções
                                     práticas e eficientes para criar aplicações web escaláveis e funcionais.

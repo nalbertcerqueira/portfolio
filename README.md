@@ -11,7 +11,7 @@
 
 ## 📋 Descrição
 
-Este projeto se trata do meu portfólio pessoal como **Desenvolvedor Fullstack**, nele você poderá encontrar algumas informações sobre mim, bem como alguns projetos realizados e as principais tecnologias que utilizo.
+Este projeto se trata do meu portfólio pessoal como **Desenvolvedor Full Stack**, nele você poderá encontrar algumas informações sobre mim, bem como alguns projetos realizados e as principais tecnologias que utilizo.
 
 O portfólio foi desenvolvido principalmente com Next.js e Typescript, e faz uso de um headless CMS para servir algumas informações utilizadas na página.
 
