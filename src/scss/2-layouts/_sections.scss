@@ -28,6 +28,11 @@
     &__content-wrapper {
         @include mixins.flex($justify: space-between, $direction: row-reverse, $gap: 2rem);
         width: 100%;
+        margin-inline: 2rem;
+
+        @include mixins.media-1040 {
+            margin-inline: 0rem;
+        }
 
         @include mixins.media-920 {
             flex-direction: column;
@@ -50,7 +55,7 @@
         font-size: 3.5rem;
         transition: color vars.$transition-time;
 
-        @include mixins.media-1040 {
+        @include mixins.media-1120 {
             font-size: 3rem;
         }
 
@@ -70,7 +75,7 @@
             color: vars.$light-dark;
             font-size: 2.75rem;
 
-            @include mixins.media-1040 {
+            @include mixins.media-1120 {
                 font-size: 2.25rem;
             }
 
@@ -82,8 +87,8 @@
 
     &__avatar-container {
         position: relative;
-        max-height: 24rem;
-        max-width: 24rem;
+        max-height: 22rem;
+        max-width: 22rem;
         width: 28vw;
         height: 28vw;
         border-radius: $avatar-border-radius;

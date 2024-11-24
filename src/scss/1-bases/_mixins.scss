@@ -1,5 +1,10 @@
 @use "./variables" as vars;
 
+@mixin media-1120 {
+    @media only screen and (max-width: 1120px) {
+        @content;
+    }
+}
 @mixin media-1040 {
     @media only screen and (max-width: 1040px) {
         @content;
