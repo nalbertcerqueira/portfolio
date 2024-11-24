@@ -19,9 +19,8 @@ const titleSpans: TitleSpan[] = [
     { id: 1, className: "hero__title hero__title--main", content: "Nalbert" },
     { id: 2, className: "hero__title hero__title--main", content: "Cerqueira" },
     { id: 3, className: "hero__title hero__title--sub", content: "Desenvolvedor" },
-    { id: 4, className: "hero__title hero__title--sub", content: "Web" },
-    { id: 5, className: "hero__title hero__title--sub", content: "Full Stack" },
-    { id: 6, className: "hero__title hero__title--main", content: "." }
+    { id: 4, className: "hero__title hero__title--sub", content: "Front-end" },
+    { id: 5, className: "hero__title hero__title--main", content: "." }
 ]
 
 export default function Hero({ cvURL }: { cvURL: string }) {
@@ -36,7 +35,7 @@ export default function Hero({ cvURL }: { cvURL: string }) {
                     {span.content}
                 </motion.span>
 
-                {span.id % 2 === 0 ? <br /> : <>&nbsp;</>}
+                {span.id === 1 || span.id === 4 ? <>&nbsp;</> : <br />}
             </Fragment>
         ))
     }
@@ -60,7 +59,7 @@ export default function Hero({ cvURL }: { cvURL: string }) {
                             placeholder="blur"
                             className="hero__avatar-img"
                             src={profilePicture}
-                            alt="Nalbert cerqueira - Desenvolvedor Full Stack."
+                            alt="Nalbert cerqueira - Desenvolvedor Front-end"
                         />
                     </motion.div>
                     <div className="hero__left-content">

@@ -66,7 +66,7 @@ export default function About() {
                             className="about__avatar-img"
                             src={profilePicture}
                             placeholder="blur"
-                            alt="Nalbert cerqueira - desenvolvedor frontend."
+                            alt="Nalbert cerqueira - Desenvolvedor Front-end"
                         />
                     </motion.div>
                     <div className="about__right-content">
@@ -74,12 +74,12 @@ export default function About() {
                             <article>
                                 <MarkerHeading markerClassName="about__marker" title="Apresentação" />
                                 <p className="about__text">
-                                    Desenvolvedor Full Stack com experiência em tecnologias como: React,
-                                    Next.js, MySQL, TypeScript, TailwindCSS, APIs Rest, Mongodb, Node.js,
-                                    dentre outras. Como desenvolvedor estou sempre buscando por soluções
-                                    práticas e eficientes para criar aplicações web escaláveis e funcionais.
-                                    Atualmente venho me dedicando na construção de aplicações com foco em
-                                    responsividade, otimizações de SEO, acessibilidade e performance.
+                                    Desenvolvedor Front-end com experiência em tecnologias como: React,
+                                    Next.js, React Native, MySQL, TypeScript, TailwindCSS, APIs Rest, Mongodb,
+                                    Node.js, dentre outras. Como desenvolvedor estou sempre buscando por
+                                    soluções práticas e eficientes para criar aplicações web escaláveis e
+                                    funcionais. Desde então venho me dedicando na construção de aplicações com
+                                    foco em responsividade, otimizações de SEO, acessibilidade e performance.
                                     <br />
                                     Nas próximas sessões você encontrará alguns projetos desenvolvidos por mim
                                     e as principais tecnologias que utilizo.
